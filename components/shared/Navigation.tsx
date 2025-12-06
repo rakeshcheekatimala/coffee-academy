@@ -8,13 +8,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/levels/1', label: 'Levels' },
+  { href: '/articles', label: 'Learn' },
   { href: '/recipes', label: 'Recipes' },
-  { href: '/explore', label: 'Explore' },
-  { href: '/recommendations', label: 'Recommendations' },
-  { href: '/quiz', label: 'Quiz' },
-  { href: '/wizard', label: 'Wizard' },
-  { href: '/glossary', label: 'Glossary' },
+  { href: '/community', label: 'Community' },
+  { href: '/brew-of-the-week', label: 'Featured' },
+  { href: '/wizard', label: 'Find Your Brew' },
+  { href: '/profile', label: 'Profile' },
 ];
 
 export function Navigation() {
