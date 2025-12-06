@@ -57,6 +57,10 @@ export interface Recipe {
   image?: string;
   time: string;
   servings: number;
+  coffeeAmount: string;
+  waterAmount: string;
+  waterTemp: string;
+  brewTime: string;
 }
 
 export interface Ingredient {

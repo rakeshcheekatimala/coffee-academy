@@ -9,6 +9,10 @@ export const recipes: Recipe[] = [
     difficulty: 'medium',
     time: '4 minutes',
     servings: 1,
+    coffeeAmount: '20g',
+    waterAmount: '300ml',
+    waterTemp: '200-205°F',
+    brewTime: '3-4 minutes',
     ingredients: [
       { name: 'Coffee beans', amount: '20', unit: 'g' },
       { name: 'Water', amount: '300', unit: 'ml' }
@@ -62,6 +66,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '5 minutes',
     servings: 2,
+    coffeeAmount: '30g',
+    waterAmount: '500ml',
+    waterTemp: '200°F',
+    brewTime: '4 minutes',
     ingredients: [
       { name: 'Coffee beans', amount: '30', unit: 'g' },
       { name: 'Water', amount: '500', unit: 'ml' }
@@ -113,6 +121,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '2 minutes',
     servings: 1,
+    coffeeAmount: '15g',
+    waterAmount: '250ml',
+    waterTemp: '200°F',
+    brewTime: '1:30-2 minutes',
     ingredients: [
       { name: 'Coffee beans', amount: '15', unit: 'g' },
       { name: 'Water', amount: '250', unit: 'ml' }
@@ -166,6 +178,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '12-24 hours',
     servings: 4,
+    coffeeAmount: '100g',
+    waterAmount: '600ml',
+    waterTemp: 'Cold water',
+    brewTime: '12-24 hours',
     ingredients: [
       { name: 'Coffee beans', amount: '100', unit: 'g' },
       { name: 'Cold water', amount: '600', unit: 'ml' }
@@ -215,6 +231,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '5 minutes',
     servings: 1,
+    coffeeAmount: '60ml espresso',
+    waterAmount: 'N/A',
+    waterTemp: 'Cold milk',
+    brewTime: '2-3 minutes',
     ingredients: [
       { name: 'Espresso or strong coffee', amount: '2', unit: 'shots (60ml)' },
       { name: 'Milk', amount: '120', unit: 'ml' },
@@ -261,6 +281,10 @@ export const recipes: Recipe[] = [
     difficulty: 'medium',
     time: '5 minutes',
     servings: 1,
+    coffeeAmount: '30ml espresso',
+    waterAmount: '60ml milk',
+    waterTemp: '150-160°F',
+    brewTime: '3-4 minutes',
     ingredients: [
       { name: 'Espresso', amount: '1', unit: 'shot (30ml)' },
       { name: 'Milk', amount: '60', unit: 'ml' }
@@ -310,6 +334,10 @@ export const recipes: Recipe[] = [
     difficulty: 'medium',
     time: '5 minutes',
     servings: 1,
+    coffeeAmount: '30-60ml espresso',
+    waterAmount: '180-240ml milk',
+    waterTemp: '150-160°F',
+    brewTime: '3-4 minutes',
     ingredients: [
       { name: 'Espresso', amount: '1-2', unit: 'shots (30-60ml)' },
       { name: 'Milk', amount: '180-240', unit: 'ml' }
@@ -359,6 +387,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '5 minutes',
     servings: 1,
+    coffeeAmount: '30-60ml espresso',
+    waterAmount: '180-240ml milk',
+    waterTemp: '150-160°F',
+    brewTime: '3-4 minutes',
     ingredients: [
       { name: 'Espresso', amount: '1-2', unit: 'shots (30-60ml)' },
       { name: 'Chocolate syrup or cocoa powder', amount: '1-2', unit: 'tbsp' },
@@ -410,6 +442,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '5 minutes',
     servings: 4,
+    coffeeAmount: '60g',
+    waterAmount: '1000ml',
+    waterTemp: 'Auto-heated',
+    brewTime: '5 minutes',
     ingredients: [
       { name: 'Coffee beans', amount: '60', unit: 'g' },
       { name: 'Water', amount: '1000', unit: 'ml' }
@@ -458,6 +494,10 @@ export const recipes: Recipe[] = [
     difficulty: 'easy',
     time: '3 minutes',
     servings: 1,
+    coffeeAmount: 'N/A',
+    waterAmount: '60ml cream/milk',
+    waterTemp: 'Cold',
+    brewTime: '1-2 minutes',
     ingredients: [
       { name: 'Heavy cream or milk', amount: '60', unit: 'ml' },
       { name: 'Simple syrup', amount: '1', unit: 'tsp' },

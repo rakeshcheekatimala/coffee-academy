@@ -1,6 +1,7 @@
 'use client';
 
-import { notFound, use } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import { use } from 'react';
 import { getLevel, getTotalLevels } from '@/lib/content/levels';
 import { LevelContent } from '@/components/level/LevelContent';
 import { ProgressBar } from '@/components/shared/ProgressBar';
@@ -106,4 +107,3 @@ export default function LevelPage({ params }: LevelPageProps) {
     </div>
   );
 }
-
