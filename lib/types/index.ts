@@ -101,7 +101,7 @@ export interface CoffeeRecommendation {
   id: string;
   name: string;
   origin: string;
-  roast: 'light' | 'medium' | 'dark';
+  roast: 'light' | 'medium' | 'medium-dark' | 'dark';
   flavorProfile: string[];
   acidity: 'low' | 'medium' | 'high';
   body: 'light' | 'medium' | 'full';
@@ -161,7 +161,7 @@ export interface WizardPreferences {
   brewingTime: 'quick' | 'moderate' | 'patient';
   caffeineLevel: 'low' | 'regular' | 'high';
   beanOrigin: string[];
-  roastLevel: 'light' | 'medium' | 'dark' | 'any';
+  roastLevel: 'light' | 'medium' | 'medium-dark' | 'dark' | 'any';
   budget: 'budget' | 'mid-range' | 'premium';
   preferredMethod?: string[];
 }

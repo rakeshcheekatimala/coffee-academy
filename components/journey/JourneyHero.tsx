@@ -107,9 +107,9 @@ export function JourneyHero() {
           </Button>
           <Button
             asChild
-            variant="outline"
             size="lg"
-            className="border-amber-400/30 text-amber-100 hover:bg-amber-100/10 text-lg px-8 py-6 rounded-full backdrop-blur-sm"
+            variant="ghost"
+            className="relative text-amber-50 bg-gradient-to-br from-amber-950/40 via-transparent to-amber-950/40 hover:from-amber-900/50 hover:via-amber-800/30 hover:to-amber-900/50 text-lg px-8 py-6 rounded-full backdrop-blur-md border-2 border-amber-500/30 hover:border-amber-400/50 shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-900/40 transition-all duration-300 font-medium hover:scale-105"
           >
             <Link href="/levels">Start Learning</Link>
           </Button>

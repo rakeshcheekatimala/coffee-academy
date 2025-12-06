@@ -10,7 +10,7 @@ export interface RecipeFilters {
 }
 
 export interface CoffeeFilters {
-  roast?: ('light' | 'medium' | 'dark')[];
+  roast?: ('light' | 'medium' | 'medium-dark' | 'dark')[];
   acidity?: ('low' | 'medium' | 'high')[];
   body?: ('light' | 'medium' | 'full')[];
   origin?: string[];
@@ -215,8 +215,8 @@ export function sortCoffees(
     case 'name':
       return sorted.sort((a, b) => a.name.localeCompare(b.name));
     case 'roast':
-      const roastOrder = { light: 1, medium: 2, dark: 3 };
-      return sorted.sort((a, b) => roastOrder[a.roast] - roastOrder[b.roast]);
+      const roastOrder: Record<string, number> = { light: 1, medium: 2, 'medium-dark': 3, dark: 4 };
+      return sorted.sort((a, b) => (roastOrder[a.roast] || 0) - (roastOrder[b.roast] || 0));
     case 'acidity':
       const acidityOrder = { low: 1, medium: 2, high: 3 };
       return sorted.sort((a, b) => acidityOrder[a.acidity] - acidityOrder[b.acidity]);

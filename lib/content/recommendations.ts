@@ -167,7 +167,7 @@ export const getRecommendation = (id: string): CoffeeRecommendation | undefined 
   return recommendations.find(rec => rec.id === id);
 };
 
-export const getRecommendationsByRoast = (roast: 'light' | 'medium' | 'dark'): CoffeeRecommendation[] => {
+export const getRecommendationsByRoast = (roast: 'light' | 'medium' | 'medium-dark' | 'dark'): CoffeeRecommendation[] => {
   return recommendations.filter(rec => rec.roast === roast);
 };
 

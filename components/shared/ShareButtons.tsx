@@ -2,12 +2,6 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dialog';
 import { 
   Share2, 
   Twitter, 
