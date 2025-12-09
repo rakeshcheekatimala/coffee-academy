@@ -42,7 +42,7 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
       >
         <Link 
           href={`/articles/${article.slug}`}
-          onClick={() => trackArticleClick(article.slug, variant === 'featured' ? 'featured' : 'article_list')}
+          onClick={() => trackArticleClick(article.slug, 'featured')}
         >
           <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200/50">
             <div className="p-8">
@@ -94,7 +94,7 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
       >
         <Link 
           href={`/articles/${article.slug}`}
-          onClick={() => trackArticleClick(article.slug, variant === 'featured' ? 'featured' : 'article_list')}
+          onClick={() => trackArticleClick(article.slug, 'compact')}
         >
           <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
             <div className="flex-1 min-w-0">
@@ -123,7 +123,10 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
       transition={{ duration: 0.4, delay: index * 0.1 }}
       whileHover={{ y: -5 }}
     >
-      <Link href={`/articles/${article.slug}`}>
+      <Link 
+        href={`/articles/${article.slug}`}
+        onClick={() => trackArticleClick(article.slug, 'article_list')}
+      >
         <Card className="h-full group hover:shadow-lg transition-all duration-300 overflow-hidden">
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2 mb-2">
