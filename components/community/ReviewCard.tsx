@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { RatingStars } from './RatingStars';
 import { Review } from '@/lib/types';
 import { ThumbsUp, Check, X } from 'lucide-react';
+import { trackReviewSubmission } from '@/lib/utils/analytics';
 
 interface ReviewCardProps {
   review: Review;
@@ -182,6 +183,7 @@ export function WriteReviewForm({ onSubmit, onCancel }: WriteReviewFormProps) {
   const handleSubmit = () => {
     if (rating === 0 || !title.trim() || !content.trim()) return;
 
+    trackReviewSubmission(rating);
     onSubmit({
       rating,
       title: title.trim(),

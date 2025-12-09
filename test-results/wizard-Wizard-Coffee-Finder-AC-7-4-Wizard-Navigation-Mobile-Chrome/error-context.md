@@ -1,0 +1,62 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [active] [ref=e9]:
+        - img
+    - generic [ref=e11]:
+      - link "Home" [ref=e12] [cursor=pointer]:
+        - /url: /
+      - link "Learn" [ref=e13] [cursor=pointer]:
+        - /url: /articles
+      - link "Recipes" [ref=e14] [cursor=pointer]:
+        - /url: /recipes
+      - link "Community" [ref=e15] [cursor=pointer]:
+        - /url: /community
+      - link "Featured" [ref=e16] [cursor=pointer]:
+        - /url: /brew-of-the-week
+      - link "Find Your Brew" [ref=e17] [cursor=pointer]:
+        - /url: /wizard
+      - link "Profile" [ref=e18] [cursor=pointer]:
+        - /url: /profile
+  - generic [ref=e19]:
+    - generic [ref=e25]:
+      - heading "Coffee Finder Wizard" [level=1] [ref=e27]
+      - paragraph [ref=e29]: Answer a few questions to discover your perfect coffee match
+    - generic [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: Question
+        - generic [ref=e37]: 2 / 8
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: How strong do you like your coffee?
+            - generic [ref=e44]: This affects the brewing methods and coffee types we recommend
+          - generic [ref=e45]:
+            - button "Mild & Smooth Light, easy-drinking coffee" [ref=e46]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: Mild & Smooth
+                - generic [ref=e50]: Light, easy-drinking coffee
+            - button "Balanced A good middle ground" [ref=e51]:
+              - generic [ref=e53]:
+                - generic [ref=e54]: Balanced
+                - generic [ref=e55]: A good middle ground
+            - button "Bold & Intense Full-bodied, powerful flavor" [ref=e56]:
+              - generic [ref=e58]:
+                - generic [ref=e59]: Bold & Intense
+                - generic [ref=e60]: Full-bodied, powerful flavor
+        - generic [ref=e61]:
+          - button "Back" [ref=e62]:
+            - img
+            - text: Back
+          - generic [ref=e63]: 2 of 8
+  - button "Open Next.js Dev Tools" [ref=e69] [cursor=pointer]:
+    - img [ref=e70]
+  - alert [ref=e73]
+```

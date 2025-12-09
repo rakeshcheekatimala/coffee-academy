@@ -1,0 +1,76 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e10]:
+    - generic [ref=e16]:
+      - heading "Your Profile" [level=1] [ref=e18]
+      - paragraph [ref=e20]: Manage your preferences, favorites, and coffee journey progress.
+    - generic [ref=e23]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: G
+        - generic [ref=e29]:
+          - heading "Guest" [level=2] [ref=e30]
+          - paragraph [ref=e31]: Create a profile to save your data
+        - link "Create Profile" [ref=e32] [cursor=pointer]:
+          - /url: /community/submit
+          - img
+          - text: Create Profile
+      - generic [ref=e33]:
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - generic [ref=e38]: "0"
+          - generic [ref=e39]: Favorites
+        - generic [ref=e41]:
+          - img [ref=e42]
+          - generic [ref=e44]: "0"
+          - generic [ref=e45]: Recipes Viewed
+        - generic [ref=e47]:
+          - img [ref=e48]
+          - generic [ref=e50]: "0"
+          - generic [ref=e51]: Articles Read
+        - generic [ref=e53]:
+          - img [ref=e54]
+          - generic [ref=e57]: "0"
+          - generic [ref=e58]: Items Explored
+      - generic [ref=e59]:
+        - tablist [ref=e60]:
+          - tab "Preferences" [ref=e61]:
+            - img
+            - text: Preferences
+          - tab "Favorites" [active] [selected] [ref=e62]:
+            - img
+            - text: Favorites
+          - tab "History" [ref=e63]:
+            - img
+            - text: History
+        - tabpanel "Favorites" [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - heading "Favorite Recipes" [level=3] [ref=e67]:
+                - img [ref=e68]
+                - text: Favorite Recipes
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: No favorite recipes yet
+                - link "Browse recipes" [ref=e73] [cursor=pointer]:
+                  - /url: /recipes
+            - generic [ref=e74]:
+              - heading "Favorite Coffees" [level=3] [ref=e75]:
+                - img [ref=e76]
+                - text: Favorite Coffees
+              - generic [ref=e79]:
+                - paragraph [ref=e80]: No favorite coffees yet
+                - link "Browse coffees" [ref=e81] [cursor=pointer]:
+                  - /url: /recommendations
+  - button "Open Next.js Dev Tools" [ref=e87] [cursor=pointer]:
+    - img [ref=e88]
+  - alert [ref=e91]
+```

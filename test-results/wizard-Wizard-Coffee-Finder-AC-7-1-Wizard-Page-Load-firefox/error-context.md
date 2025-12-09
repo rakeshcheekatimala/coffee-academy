@@ -1,0 +1,60 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e14] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e15] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e17] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e18] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e19] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e20]:
+    - generic [ref=e26]:
+      - heading "Coffee Finder Wizard" [level=1] [ref=e28]
+      - paragraph [ref=e30]: Answer a few questions to discover your perfect coffee match
+    - generic [ref=e34]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: Question
+        - generic [ref=e38]: 1 / 8
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: What's your experience level with coffee?
+            - generic [ref=e45]: This helps us tailor recommendations to your skill level
+          - generic [ref=e46]:
+            - button "Complete Beginner I'm just starting my coffee journey" [ref=e47]:
+              - generic [ref=e49]:
+                - generic [ref=e50]: Complete Beginner
+                - generic [ref=e51]: I'm just starting my coffee journey
+            - button "Some Experience I've made coffee before and want to learn more" [ref=e52]:
+              - generic [ref=e54]:
+                - generic [ref=e55]: Some Experience
+                - generic [ref=e56]: I've made coffee before and want to learn more
+            - button "Coffee Enthusiast I know the basics and want to perfect my craft" [ref=e57]:
+              - generic [ref=e59]:
+                - generic [ref=e60]: Coffee Enthusiast
+                - generic [ref=e61]: I know the basics and want to perfect my craft
+        - generic [ref=e62]:
+          - button "Back" [disabled]:
+            - img
+            - text: Back
+          - generic [ref=e63]: 1 of 8
+  - button "Open Next.js Dev Tools" [ref=e69] [cursor=pointer]:
+    - img [ref=e70]
+  - alert [ref=e74]
+```

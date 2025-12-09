@@ -1,0 +1,47 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e10]:
+    - generic [ref=e16]:
+      - heading "Coffee Finder Wizard" [level=1] [ref=e18]
+      - paragraph [ref=e20]: Answer a few questions to discover your perfect coffee match
+    - generic [ref=e24]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: Question
+        - generic [ref=e28]: 2 / 8
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e34]: How strong do you like your coffee?
+            - generic [ref=e35]: This affects the brewing methods and coffee types we recommend
+          - generic [ref=e36]:
+            - button "Mild & Smooth Light, easy-drinking coffee" [ref=e37]:
+              - generic [ref=e39]:
+                - generic [ref=e40]: Mild & Smooth
+                - generic [ref=e41]: Light, easy-drinking coffee
+            - button "Balanced A good middle ground" [ref=e42]:
+              - generic [ref=e44]:
+                - generic [ref=e45]: Balanced
+                - generic [ref=e46]: A good middle ground
+            - button "Bold & Intense Full-bodied, powerful flavor" [ref=e47]:
+              - generic [ref=e49]:
+                - generic [ref=e50]: Bold & Intense
+                - generic [ref=e51]: Full-bodied, powerful flavor
+        - generic [ref=e52]:
+          - button "Back" [ref=e53]:
+            - img
+            - text: Back
+          - generic [ref=e54]: 2 of 8
+  - button "Open Next.js Dev Tools" [ref=e60] [cursor=pointer]:
+    - img [ref=e61]
+  - alert [ref=e66]
+```

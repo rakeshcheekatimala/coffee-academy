@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Coffee, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackNavigation } from '@/lib/utils/analytics';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,7 +24,11 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 font-bold text-xl"
+            onClick={() => trackNavigation('Logo', 'header')}
+          >
             <Coffee className="h-6 w-6 text-coffee-gold" />
             <span>Coffee Academy</span>
           </Link>
@@ -32,7 +37,12 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Button key={link.href} asChild variant="ghost">
-                <Link href={link.href}>{link.label}</Link>
+                <Link 
+                  href={link.href}
+                  onClick={() => trackNavigation(link.label, 'header_desktop')}
+                >
+                  {link.label}
+                </Link>
               </Button>
             ))}
           </div>
@@ -65,7 +75,10 @@ export function Navigation() {
                   asChild
                   variant="ghost"
                   className="w-full justify-start"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    trackNavigation(link.label, 'header_mobile');
+                  }}
                 >
                   <Link href={link.href}>{link.label}</Link>
                 </Button>

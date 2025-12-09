@@ -9,6 +9,7 @@ import { Comment } from '@/lib/types';
 import { getComments, addComment, likeComment, getCommentCount } from '@/lib/content/comments';
 import { getCurrentUser } from '@/lib/content/userContent';
 import { MessageCircle, Heart, Reply, Send, ChevronDown, ChevronUp } from 'lucide-react';
+import { trackComment } from '@/lib/utils/analytics';
 
 interface CommentSectionProps {
   itemId: string;
@@ -33,6 +34,7 @@ export function CommentSection({ itemId, itemType }: CommentSectionProps) {
       content: newComment.trim(),
     });
 
+    trackComment('comment', itemId);
     setComments((prev) => [comment, ...prev]);
     setNewComment('');
   };
@@ -40,6 +42,7 @@ export function CommentSection({ itemId, itemType }: CommentSectionProps) {
   const handleSubmitReply = (parentId: string) => {
     if (!replyContent.trim() || !currentUser) return;
 
+    trackComment('reply', parentId);
     // Add reply logic - for simplicity, adding to local state
     const reply: Comment = {
       id: `reply-${Date.now()}`,

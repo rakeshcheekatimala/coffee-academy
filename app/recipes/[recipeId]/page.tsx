@@ -1,7 +1,7 @@
 'use client';
 
 import { notFound } from 'next/navigation';
-import { use } from 'react';
+import { use, useEffect } from 'react';
 import { getRecipe } from '@/lib/content/recipes';
 import { StepIndicator } from '@/components/shared/StepIndicator';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Clock, Users, Coffee, UtensilsCrossed } from 'lucide-react';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
+import { trackRecipeView } from '@/lib/utils/analytics';
 
 interface RecipePageProps {
   params: Promise<{ recipeId: string }>;
@@ -18,6 +19,12 @@ interface RecipePageProps {
 export default function RecipePage({ params }: RecipePageProps) {
   const { recipeId } = use(params);
   const recipe = getRecipe(recipeId);
+
+  useEffect(() => {
+    if (recipe) {
+      trackRecipeView(recipe.id, recipe.title, recipe.category);
+    }
+  }, [recipe]);
 
   if (!recipe) {
     notFound();

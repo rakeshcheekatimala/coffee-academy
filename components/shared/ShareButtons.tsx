@@ -13,6 +13,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackShare } from '@/lib/utils/analytics';
 
 interface ShareButtonsProps {
   url?: string;
@@ -34,6 +35,19 @@ export function ShareButtons({
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description);
+  
+  // Determine content type from URL
+  const getContentType = (): 'recipe' | 'article' | 'brew' => {
+    if (shareUrl.includes('/recipes/')) return 'recipe';
+    if (shareUrl.includes('/articles/')) return 'article';
+    if (shareUrl.includes('/community/brews')) return 'brew';
+    return 'article'; // default
+  };
+  
+  const getContentId = (): string => {
+    const match = shareUrl.match(/\/(recipes|articles)\/([^/]+)/);
+    return match ? match[2] : shareUrl;
+  };
 
   const shareLinks = {
     twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
@@ -61,6 +75,7 @@ export function ShareButtons({
           text: description,
           url: shareUrl,
         });
+        trackShare('native', getContentType(), getContentId());
       } catch (err) {
         // User cancelled or share failed
       }
@@ -88,7 +103,10 @@ export function ShareButtons({
           variant="ghost"
           size="icon"
           className="h-8 w-8"
-          onClick={() => window.open(shareLinks.twitter, '_blank')}
+          onClick={() => {
+            trackShare('twitter', getContentType(), getContentId());
+            window.open(shareLinks.twitter, '_blank');
+          }}
           title="Share on Twitter"
         >
           <Twitter className="w-4 h-4" />
@@ -97,7 +115,10 @@ export function ShareButtons({
           variant="ghost"
           size="icon"
           className="h-8 w-8"
-          onClick={() => window.open(shareLinks.facebook, '_blank')}
+          onClick={() => {
+            trackShare('facebook', getContentType(), getContentId());
+            window.open(shareLinks.facebook, '_blank');
+          }}
           title="Share on Facebook"
         >
           <Facebook className="w-4 h-4" />
@@ -106,7 +127,10 @@ export function ShareButtons({
           variant="ghost"
           size="icon"
           className="h-8 w-8"
-          onClick={copyToClipboard}
+          onClick={() => {
+            trackShare('copy_link', getContentType(), getContentId());
+            copyToClipboard();
+          }}
           title="Copy link"
         >
           <AnimatePresence mode="wait">
@@ -144,7 +168,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2 hover:bg-[#1DA1F2]/10 hover:text-[#1DA1F2] hover:border-[#1DA1F2]"
-        onClick={() => window.open(shareLinks.twitter, '_blank')}
+        onClick={() => {
+          trackShare('twitter', getContentType(), getContentId());
+          window.open(shareLinks.twitter, '_blank');
+        }}
       >
         <Twitter className="w-4 h-4" />
         Twitter
@@ -154,7 +181,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2 hover:bg-[#4267B2]/10 hover:text-[#4267B2] hover:border-[#4267B2]"
-        onClick={() => window.open(shareLinks.facebook, '_blank')}
+        onClick={() => {
+          trackShare('facebook', getContentType(), getContentId());
+          window.open(shareLinks.facebook, '_blank');
+        }}
       >
         <Facebook className="w-4 h-4" />
         Facebook
@@ -164,7 +194,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2 hover:bg-[#0077B5]/10 hover:text-[#0077B5] hover:border-[#0077B5]"
-        onClick={() => window.open(shareLinks.linkedin, '_blank')}
+        onClick={() => {
+          trackShare('linkedin', getContentType(), getContentId());
+          window.open(shareLinks.linkedin, '_blank');
+        }}
       >
         <Linkedin className="w-4 h-4" />
         LinkedIn
@@ -174,7 +207,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2 hover:bg-[#25D366]/10 hover:text-[#25D366] hover:border-[#25D366]"
-        onClick={() => window.open(shareLinks.whatsapp, '_blank')}
+        onClick={() => {
+          trackShare('whatsapp', getContentType(), getContentId());
+          window.open(shareLinks.whatsapp, '_blank');
+        }}
       >
         <MessageCircle className="w-4 h-4" />
         WhatsApp
@@ -184,7 +220,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2"
-        onClick={() => window.open(shareLinks.email, '_blank')}
+        onClick={() => {
+          trackShare('email', getContentType(), getContentId());
+          window.open(shareLinks.email, '_blank');
+        }}
       >
         <Mail className="w-4 h-4" />
         Email
@@ -194,7 +233,10 @@ export function ShareButtons({
         variant="outline"
         size="sm"
         className="gap-2"
-        onClick={copyToClipboard}
+        onClick={() => {
+          trackShare('copy_link', getContentType(), getContentId());
+          copyToClipboard();
+        }}
       >
         <AnimatePresence mode="wait">
           {copied ? (
@@ -228,6 +270,20 @@ export function ShareButtons({
 
 // Floating share button for mobile
 export function FloatingShareButton({ title, description }: { title: string; description?: string }) {
+  const getContentType = (): 'recipe' | 'article' | 'brew' => {
+    const url = window.location.href;
+    if (url.includes('/recipes/')) return 'recipe';
+    if (url.includes('/articles/')) return 'article';
+    if (url.includes('/community/brews')) return 'brew';
+    return 'article';
+  };
+  
+  const getContentId = (): string => {
+    const url = window.location.href;
+    const match = url.match(/\/(recipes|articles)\/([^/]+)/);
+    return match ? match[2] : url;
+  };
+
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -236,6 +292,7 @@ export function FloatingShareButton({ title, description }: { title: string; des
           text: description,
           url: window.location.href,
         });
+        trackShare('native', getContentType(), getContentId());
       } catch (err) {
         // User cancelled or share failed
       }

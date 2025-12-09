@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Heart, MessageCircle, Share2, Coffee, Clock, Star } from 'lucide-react';
 import { UserBrew } from '@/lib/types';
 import Link from 'next/link';
+import { trackBrewLike } from '@/lib/utils/analytics';
 
 interface BrewCardProps {
   brew: UserBrew;
@@ -117,7 +118,10 @@ export function BrewCard({ brew, index = 0, onLike }: BrewCardProps) {
                 variant="ghost"
                 size="sm"
                 className="gap-1 text-muted-foreground hover:text-red-500"
-                onClick={() => onLike?.(brew.id)}
+                onClick={() => {
+                  onLike?.(brew.id);
+                  trackBrewLike(brew.id);
+                }}
               >
                 <Heart className="w-4 h-4" />
                 <span>{brew.likes}</span>

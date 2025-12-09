@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { Article } from '@/lib/types';
+import { trackArticleClick } from '@/lib/utils/analytics';
 
 interface ArticleCardProps {
   article: Article;
@@ -39,7 +40,10 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
       >
-        <Link href={`/articles/${article.slug}`}>
+        <Link 
+          href={`/articles/${article.slug}`}
+          onClick={() => trackArticleClick(article.slug, variant === 'featured' ? 'featured' : 'article_list')}
+        >
           <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-amber-50 to-orange-50 border-amber-200/50">
             <div className="p-8">
               <div className="flex items-center gap-3 mb-4">
@@ -88,7 +92,10 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: index * 0.05 }}
       >
-        <Link href={`/articles/${article.slug}`}>
+        <Link 
+          href={`/articles/${article.slug}`}
+          onClick={() => trackArticleClick(article.slug, variant === 'featured' ? 'featured' : 'article_list')}
+        >
           <div className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">

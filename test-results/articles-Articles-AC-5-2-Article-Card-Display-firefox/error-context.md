@@ -1,0 +1,219 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e14] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e15] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e17] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e18] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e19] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e20]:
+    - generic [ref=e26]:
+      - heading "Coffee 101" [level=1] [ref=e28]
+      - paragraph [ref=e30]: Educational articles to deepen your coffee knowledge. From basics to advanced techniques.
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - textbox "Search articles by title, topic, or tag..." [ref=e39]
+        - generic [ref=e40]:
+          - button "All Topics" [ref=e41]
+          - button "Coffee Basics" [ref=e42]
+          - button "Roasting" [ref=e43]
+          - button "Brewing" [ref=e44]
+          - button "Science" [ref=e45]
+          - button "Equipment" [ref=e46]
+          - button "Culture" [ref=e47]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - generic [ref=e51]: Featured
+            - generic [ref=e52]: Latest article
+          - link "Coffee Basics 5 min read What is Single-Origin Coffee? Discover why coffee enthusiasts prize single-origin beans and how they differ from blends. Jan 15, 2024 by Coffee Academy Read Article" [ref=e54] [cursor=pointer]:
+            - /url: /articles/what-is-single-origin-coffee
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - generic [ref=e58]: Coffee Basics
+                - generic [ref=e59]:
+                  - img [ref=e60]
+                  - text: 5 min read
+              - generic [ref=e63]: What is Single-Origin Coffee?
+              - generic [ref=e64]: Discover why coffee enthusiasts prize single-origin beans and how they differ from blends.
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - generic [ref=e67]:
+                    - img [ref=e68]
+                    - text: Jan 15, 2024
+                  - generic [ref=e73]: by Coffee Academy
+                - generic [ref=e74]:
+                  - text: Read Article
+                  - img [ref=e75]
+        - generic [ref=e78]:
+          - heading "More Articles" [level=2] [ref=e79]
+          - generic [ref=e80]:
+            - link "Roasting Why Roast Levels Matter From light to dark, learn how roasting transforms coffee beans and affects your cup. 6 min Jan 20" [ref=e82] [cursor=pointer]:
+              - /url: /articles/why-roast-levels-matter
+              - generic [ref=e83]:
+                - generic [ref=e84]:
+                  - generic [ref=e86]: Roasting
+                  - generic [ref=e87]: Why Roast Levels Matter
+                - generic [ref=e88]:
+                  - generic [ref=e89]: From light to dark, learn how roasting transforms coffee beans and affects your cup.
+                  - generic [ref=e90]:
+                    - generic [ref=e91]:
+                      - generic [ref=e92]:
+                        - img [ref=e93]
+                        - text: 6 min
+                      - generic [ref=e96]:
+                        - img [ref=e97]
+                        - text: Jan 20
+                    - img [ref=e102]
+            - link "Brewing Manual Brew vs Espresso vs Cold Brew Understanding the three main brewing categories and when to use each method. 7 min Feb 1" [ref=e106] [cursor=pointer]:
+              - /url: /articles/manual-brew-vs-espresso-vs-cold-brew
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e110]: Brewing
+                  - generic [ref=e111]: Manual Brew vs Espresso vs Cold Brew
+                - generic [ref=e112]:
+                  - generic [ref=e113]: Understanding the three main brewing categories and when to use each method.
+                  - generic [ref=e114]:
+                    - generic [ref=e115]:
+                      - generic [ref=e116]:
+                        - img [ref=e117]
+                        - text: 7 min
+                      - generic [ref=e120]:
+                        - img [ref=e121]
+                        - text: Feb 1
+                    - img [ref=e126]
+            - link "Brewing How Grind Size Affects Taste The overlooked variable that makes or breaks your coffee — a complete guide to grind size. 6 min Feb 10" [ref=e130] [cursor=pointer]:
+              - /url: /articles/how-grind-size-affects-taste
+              - generic [ref=e131]:
+                - generic [ref=e132]:
+                  - generic [ref=e134]: Brewing
+                  - generic [ref=e135]: How Grind Size Affects Taste
+                - generic [ref=e136]:
+                  - generic [ref=e137]: The overlooked variable that makes or breaks your coffee — a complete guide to grind size.
+                  - generic [ref=e138]:
+                    - generic [ref=e139]:
+                      - generic [ref=e140]:
+                        - img [ref=e141]
+                        - text: 6 min
+                      - generic [ref=e144]:
+                        - img [ref=e145]
+                        - text: Feb 10
+                    - img [ref=e150]
+            - link "Science Understanding Coffee Acidity Why acidity is a desirable quality in specialty coffee and how to find your preference. 5 min Feb 15" [ref=e154] [cursor=pointer]:
+              - /url: /articles/understanding-coffee-acidity
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - generic [ref=e158]: Science
+                  - generic [ref=e159]: Understanding Coffee Acidity
+                - generic [ref=e160]:
+                  - generic [ref=e161]: Why acidity is a desirable quality in specialty coffee and how to find your preference.
+                  - generic [ref=e162]:
+                    - generic [ref=e163]:
+                      - generic [ref=e164]:
+                        - img [ref=e165]
+                        - text: 5 min
+                      - generic [ref=e168]:
+                        - img [ref=e169]
+                        - text: Feb 15
+                    - img [ref=e174]
+            - link "Science The Science of Extraction What actually happens when water meets coffee — the chemistry behind the perfect brew. 8 min Feb 20" [ref=e178] [cursor=pointer]:
+              - /url: /articles/the-science-of-extraction
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - generic [ref=e182]: Science
+                  - generic [ref=e183]: The Science of Extraction
+                - generic [ref=e184]:
+                  - generic [ref=e185]: What actually happens when water meets coffee — the chemistry behind the perfect brew.
+                  - generic [ref=e186]:
+                    - generic [ref=e187]:
+                      - generic [ref=e188]:
+                        - img [ref=e189]
+                        - text: 8 min
+                      - generic [ref=e192]:
+                        - img [ref=e193]
+                        - text: Feb 20
+                    - img [ref=e198]
+            - link "Equipment Beginner's Guide to Coffee Equipment Essential gear for your home coffee setup — what to buy first and what can wait. 7 min Mar 1" [ref=e202] [cursor=pointer]:
+              - /url: /articles/beginners-guide-to-coffee-equipment
+              - generic [ref=e203]:
+                - generic [ref=e204]:
+                  - generic [ref=e206]: Equipment
+                  - generic [ref=e207]: Beginner's Guide to Coffee Equipment
+                - generic [ref=e208]:
+                  - generic [ref=e209]: Essential gear for your home coffee setup — what to buy first and what can wait.
+                  - generic [ref=e210]:
+                    - generic [ref=e211]:
+                      - generic [ref=e212]:
+                        - img [ref=e213]
+                        - text: 7 min
+                      - generic [ref=e216]:
+                        - img [ref=e217]
+                        - text: Mar 1
+                    - img [ref=e222]
+            - link "Culture Coffee Culture Around the World How different cultures have shaped their own unique coffee traditions and rituals. 6 min Mar 10" [ref=e226] [cursor=pointer]:
+              - /url: /articles/coffee-culture-around-the-world
+              - generic [ref=e227]:
+                - generic [ref=e228]:
+                  - generic [ref=e230]: Culture
+                  - generic [ref=e231]: Coffee Culture Around the World
+                - generic [ref=e232]:
+                  - generic [ref=e233]: How different cultures have shaped their own unique coffee traditions and rituals.
+                  - generic [ref=e234]:
+                    - generic [ref=e235]:
+                      - generic [ref=e236]:
+                        - img [ref=e237]
+                        - text: 6 min
+                      - generic [ref=e240]:
+                        - img [ref=e241]
+                        - text: Mar 10
+                    - img [ref=e246]
+      - generic [ref=e249]:
+        - heading "Browse by Topic" [level=2] [ref=e250]
+        - generic [ref=e251]:
+          - button "Coffee Basics Foundation knowledge for your coffee journey 1 article" [ref=e252]:
+            - heading "Coffee Basics" [level=3] [ref=e253]
+            - paragraph [ref=e254]: Foundation knowledge for your coffee journey
+            - generic [ref=e255]: 1 article
+          - button "Roasting Understand how roasting shapes flavor 1 article" [ref=e256]:
+            - heading "Roasting" [level=3] [ref=e257]
+            - paragraph [ref=e258]: Understand how roasting shapes flavor
+            - generic [ref=e259]: 1 article
+          - button "Brewing Master different brewing methods and techniques 2 articles" [ref=e260]:
+            - heading "Brewing" [level=3] [ref=e261]
+            - paragraph [ref=e262]: Master different brewing methods and techniques
+            - generic [ref=e263]: 2 articles
+          - button "Science The chemistry and physics behind great coffee 2 articles" [ref=e264]:
+            - heading "Science" [level=3] [ref=e265]
+            - paragraph [ref=e266]: The chemistry and physics behind great coffee
+            - generic [ref=e267]: 2 articles
+          - button "Equipment Gear guides and recommendations 1 article" [ref=e268]:
+            - heading "Equipment" [level=3] [ref=e269]
+            - paragraph [ref=e270]: Gear guides and recommendations
+            - generic [ref=e271]: 1 article
+          - button "Culture Coffee traditions from around the world 1 article" [ref=e272]:
+            - heading "Culture" [level=3] [ref=e273]
+            - paragraph [ref=e274]: Coffee traditions from around the world
+            - generic [ref=e275]: 1 article
+  - button "Open Next.js Dev Tools" [ref=e281] [cursor=pointer]:
+    - img [ref=e282]
+  - alert [ref=e286]
+```

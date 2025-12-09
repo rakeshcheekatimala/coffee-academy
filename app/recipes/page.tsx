@@ -7,9 +7,21 @@ import { Hero } from '@/components/shared/Hero';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Search } from 'lucide-react';
+import { trackSearch, trackTabChange } from '@/lib/utils/analytics';
 
 export default function RecipesPage() {
   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    if (value.trim()) {
+      const filtered = recipes.filter(recipe =>
+        recipe.title.toLowerCase().includes(value.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(value.toLowerCase())
+      );
+      trackSearch(value, filtered.length, 'recipes');
+    }
+  };
 
   const filteredRecipes = recipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -34,12 +46,12 @@ export default function RecipesPage() {
             <Input
               placeholder="Search recipes..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               className="pl-10"
             />
           </div>
 
-          <Tabs defaultValue="all" className="w-full">
+          <Tabs defaultValue="all" className="w-full" onValueChange={(value) => trackTabChange(value, 'recipes_page')}>
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="hot">Hot</TabsTrigger>

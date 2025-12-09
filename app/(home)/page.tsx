@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Coffee, UtensilsCrossed, FlaskConical, BookOpen, MapPin, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 const spotlightCards = [
   {
@@ -105,7 +106,12 @@ export default function HomePage() {
                     </CardHeader>
                     <CardContent>
                       <Button asChild variant="outline" className="w-full">
-                        <Link href={card.href}>Explore</Link>
+                        <Link 
+                          href={card.href}
+                          onClick={() => trackCTAClick('Explore', 'homepage_spotlight', card.href)}
+                        >
+                          Explore
+                        </Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -133,7 +139,12 @@ export default function HomePage() {
               Start with Level 1 and work your way through our comprehensive guide.
             </p>
             <Button asChild size="lg" className="bg-coffee-gold hover:bg-coffee-gold/90 text-coffee-dark text-lg px-8 py-6">
-              <Link href="/levels/1">Begin Level 1: Coffee Basics</Link>
+              <Link 
+                href="/levels/1"
+                onClick={() => trackCTAClick('Begin Level 1: Coffee Basics', 'homepage_bottom', '/levels/1')}
+              >
+                Begin Level 1: Coffee Basics
+              </Link>
             </Button>
           </motion.div>
         </div>

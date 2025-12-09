@@ -1,0 +1,80 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - generic [ref=e9]:
+        - link "Home" [ref=e10]:
+          - /url: /
+        - link "Learn" [ref=e11]:
+          - /url: /articles
+        - link "Recipes" [ref=e12]:
+          - /url: /recipes
+        - link "Community" [ref=e13]:
+          - /url: /community
+        - link "Featured" [ref=e14]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e15]:
+          - /url: /wizard
+        - link "Profile" [ref=e16]:
+          - /url: /profile
+  - generic [ref=e17]:
+    - generic [ref=e23]:
+      - heading "Your Profile" [level=1] [ref=e25]
+      - paragraph [ref=e27]: Manage your preferences, favorites, and coffee journey progress.
+    - generic [ref=e30]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: G
+        - generic [ref=e36]:
+          - heading "Guest" [level=2] [ref=e37]
+          - paragraph [ref=e38]: Create a profile to save your data
+        - link "Create Profile" [ref=e39]:
+          - /url: /community/submit
+          - img
+          - text: Create Profile
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - generic [ref=e45]: "0"
+          - generic [ref=e46]: Favorites
+        - generic [ref=e48]:
+          - img [ref=e49]
+          - generic [ref=e51]: "0"
+          - generic [ref=e52]: Recipes Viewed
+        - generic [ref=e54]:
+          - img [ref=e55]
+          - generic [ref=e57]: "0"
+          - generic [ref=e58]: Articles Read
+        - generic [ref=e60]:
+          - img [ref=e61]
+          - generic [ref=e64]: "0"
+          - generic [ref=e65]: Items Explored
+      - generic [ref=e66]:
+        - tablist [ref=e67]:
+          - tab "Preferences" [ref=e68]:
+            - img
+            - text: Preferences
+          - tab "Favorites" [ref=e69]:
+            - img
+            - text: Favorites
+          - tab "History" [active] [selected] [ref=e70]:
+            - img
+            - text: History
+        - tabpanel "History" [ref=e71]:
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: Recently Viewed
+              - generic [ref=e76]: Your browsing history across the site
+            - generic [ref=e78]:
+              - img [ref=e79]
+              - paragraph [ref=e82]: No history yet
+              - paragraph [ref=e83]: Start exploring recipes and articles!
+  - button "Open Next.js Dev Tools" [ref=e89] [cursor=pointer]:
+    - img [ref=e90]
+  - alert [ref=e95]
+```

@@ -1,0 +1,255 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e10]:
+    - generic [ref=e16]:
+      - heading "Brew of the Week" [level=1] [ref=e18]
+      - paragraph [ref=e20]: Discover our curated weekly selection — a special coffee paired with the perfect brewing method and tasting guidance.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - img
+              - text: Brew of the Week
+            - generic [ref=e30]: Week of December 9, 2024
+          - heading "Brazilian Santos" [level=1] [ref=e31]
+          - paragraph [ref=e32]: The quintessential everyday coffee. Brazilian Santos offers comforting, familiar flavors that make it perfect for any time of day. Named after the port city from which these beans are shipped.
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - img [ref=e35]
+              - generic [ref=e37]: Brazil
+            - generic [ref=e38]:
+              - img [ref=e39]
+              - generic [ref=e41]: medium Roast
+            - generic [ref=e42]:
+              - img [ref=e43]
+              - generic [ref=e47]: medium Body
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e51]:
+              - generic [ref=e53]:
+                - img [ref=e54]
+                - text: Flavor Profile
+              - generic [ref=e56]:
+                - generic [ref=e57]:
+                  - generic [ref=e58]: Nutty
+                  - generic [ref=e59]: Chocolate
+                  - generic [ref=e60]: Caramel
+                  - generic [ref=e61]: Low Acidity
+                  - generic [ref=e62]: Smooth
+                - generic [ref=e63]:
+                  - generic [ref=e64]: Acidity:low
+                  - generic [ref=e65]: Body:medium
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - img [ref=e70]
+                  - text: Tasting Notes
+                - generic [ref=e72]: What to expect in your cup
+              - list [ref=e74]:
+                - listitem [ref=e75]:
+                  - generic [ref=e76]: "1"
+                  - generic [ref=e77]: Roasted hazelnut aroma that fills the room
+                - listitem [ref=e78]:
+                  - generic [ref=e79]: "2"
+                  - generic [ref=e80]: Milk chocolate sweetness throughout
+                - listitem [ref=e81]:
+                  - generic [ref=e82]: "3"
+                  - generic [ref=e83]: Caramel undertones in the finish
+                - listitem [ref=e84]:
+                  - generic [ref=e85]: "4"
+                  - generic [ref=e86]: Velvety smooth body with zero harshness
+            - generic [ref=e88]:
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - img [ref=e91]
+                  - text: "Recommended Recipe: French Press"
+                - generic [ref=e93]: Rich, full-bodied coffee with a simple immersion method.
+              - generic [ref=e94]:
+                - generic [ref=e95]:
+                  - generic [ref=e96]:
+                    - paragraph [ref=e97]: 30g
+                    - paragraph [ref=e98]: Coffee
+                  - generic [ref=e99]:
+                    - paragraph [ref=e100]: 500ml
+                    - paragraph [ref=e101]: Water
+                  - generic [ref=e102]:
+                    - paragraph [ref=e103]: 4 minutes
+                    - paragraph [ref=e104]: Time
+                - generic [ref=e105]:
+                  - heading "Steps" [level=4] [ref=e106]
+                  - list [ref=e107]:
+                    - listitem [ref=e108]:
+                      - generic [ref=e109]: "1"
+                      - generic [ref=e110]: Boil water to 200°F (93°C). Coarsely grind 30g of coffee.
+                    - listitem [ref=e111]:
+                      - generic [ref=e112]: "2"
+                      - generic [ref=e113]: Add coffee grounds to the French press.
+                    - listitem [ref=e114]:
+                      - generic [ref=e115]: "3"
+                      - generic [ref=e116]: Start timer. Pour all 500ml of water over the grounds, ensuring all are saturated.
+                    - listitem [ref=e117]:
+                      - generic [ref=e118]: "4"
+                      - generic [ref=e119]: Place lid on top but don't press yet. Let steep for 4 minutes.
+                    - listitem [ref=e120]:
+                      - generic [ref=e121]: "5"
+                      - generic [ref=e122]: After 4 minutes, gently break the crust with a spoon and remove foam.
+                    - listitem [ref=e123]:
+                      - generic [ref=e124]: "6"
+                      - generic [ref=e125]: Press the plunger down slowly and steadily. Pour immediately.
+                - link "View Full Recipe" [ref=e126] [cursor=pointer]:
+                  - /url: /recipes/french-press
+                  - text: View Full Recipe
+                  - img
+            - generic [ref=e128]:
+              - generic [ref=e130]: The Story Behind This Coffee
+              - paragraph [ref=e132]: Brazil produces about 40% of the world's coffee, and Santos is one of its most famous ports. Brazilian coffee has been a global staple since the 1800s, when it helped fuel the Industrial Revolution. Today, Brazilian Santos represents everything we love about a reliable, comforting cup — smooth, sweet, and consistently delicious.
+          - generic [ref=e133]:
+            - generic [ref=e135]:
+              - generic [ref=e137]:
+                - img [ref=e138]
+                - text: Brewing Tips
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - generic [ref=e143]: •
+                  - generic [ref=e144]: Use a coarse grind to prevent bitterness and sludge
+                - listitem [ref=e145]:
+                  - generic [ref=e146]: •
+                  - generic [ref=e147]: Don't press the plunger down too hard — let gravity do the work
+                - listitem [ref=e148]:
+                  - generic [ref=e149]: •
+                  - generic [ref=e150]: Pour immediately after pressing to prevent over-extraction
+                - listitem [ref=e151]:
+                  - generic [ref=e152]: •
+                  - generic [ref=e153]: Pre-heat your French press for better temperature stability
+                - listitem [ref=e154]:
+                  - generic [ref=e155]: •
+                  - generic [ref=e156]: Try adding a splash of cream to enhance the chocolate notes
+            - generic [ref=e158]:
+              - generic [ref=e160]:
+                - img [ref=e161]
+                - text: Food Pairings
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - heading "Chocolate Chip Cookie" [level=4] [ref=e166]
+                  - paragraph [ref=e167]: A classic pairing — the chocolate notes in both create harmony
+                - generic [ref=e168]:
+                  - heading "Buttered Toast" [level=4] [ref=e169]
+                  - paragraph [ref=e170]: Simple, comforting, and lets the coffee's nutty notes shine
+                - generic [ref=e171]:
+                  - heading "Banana Bread" [level=4] [ref=e172]
+                  - paragraph [ref=e173]: The caramel notes pair wonderfully with ripe banana sweetness
+            - generic [ref=e175]:
+              - generic [ref=e177]: Best For
+              - generic [ref=e179]:
+                - generic [ref=e180]: French press
+                - generic [ref=e181]: Daily drinking
+                - generic [ref=e182]: Coffee with milk
+                - generic [ref=e183]: Beginners
+            - generic [ref=e186]:
+              - heading "Ready to Try It?" [level=4] [ref=e187]
+              - paragraph [ref=e188]: Find this coffee at your local specialty roaster
+              - link "Browse All Coffees" [ref=e189] [cursor=pointer]:
+                - /url: /recommendations
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - img [ref=e196]
+          - generic [ref=e199]:
+            - heading "Never Miss a Brew" [level=3] [ref=e200]
+            - paragraph [ref=e201]: Get weekly recommendations delivered to your inbox
+        - generic [ref=e202]:
+          - textbox "Enter your email" [ref=e203]
+          - button "Subscribe" [ref=e204]
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - heading "Previous Picks" [level=2] [ref=e208]
+            - paragraph [ref=e209]: Explore past featured brews
+          - link "View All Coffees" [ref=e210] [cursor=pointer]:
+            - /url: /recommendations
+            - text: View All Coffees
+            - img
+        - generic [ref=e211]:
+          - generic [ref=e214]:
+            - generic [ref=e216]:
+              - generic [ref=e217]:
+                - generic [ref=e218]: Week of Dec 2
+                - generic [ref=e219]:
+                  - img [ref=e220]
+                  - generic [ref=e222]: Featured
+              - generic [ref=e223]: Ethiopian Yirgacheffe
+              - generic [ref=e224]: Ethiopia • light roast
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - generic [ref=e227]: Floral
+                - generic [ref=e228]: Jasmine
+                - generic [ref=e229]: Blueberry
+              - link "View Details" [ref=e230] [cursor=pointer]:
+                - /url: /brew-of-the-week
+                - text: View Details
+                - img
+          - generic [ref=e233]:
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - generic [ref=e237]: Week of Dec 16
+                - generic [ref=e238]:
+                  - img [ref=e239]
+                  - generic [ref=e241]: Featured
+              - generic [ref=e242]: Colombian Supremo
+              - generic [ref=e243]: Colombia • medium roast
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - generic [ref=e246]: Balanced
+                - generic [ref=e247]: Caramel
+                - generic [ref=e248]: Red Apple
+              - link "View Details" [ref=e249] [cursor=pointer]:
+                - /url: /brew-of-the-week
+                - text: View Details
+                - img
+          - generic [ref=e252]:
+            - generic [ref=e254]:
+              - generic [ref=e255]:
+                - generic [ref=e256]: Week of Dec 23
+                - generic [ref=e257]:
+                  - img [ref=e258]
+                  - generic [ref=e260]: Featured
+              - generic [ref=e261]: Holiday Spice Blend
+              - generic [ref=e262]: Central America & Indonesia • medium-dark roast
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - generic [ref=e265]: Cinnamon
+                - generic [ref=e266]: Clove
+                - generic [ref=e267]: Dark Chocolate
+              - link "View Details" [ref=e268] [cursor=pointer]:
+                - /url: /brew-of-the-week
+                - text: View Details
+                - img
+      - generic [ref=e270]:
+        - generic [ref=e272]: How Brew of the Week Works
+        - generic [ref=e274]:
+          - generic [ref=e275]:
+            - generic [ref=e276]: "1"
+            - heading "Weekly Curation" [level=4] [ref=e277]
+            - paragraph [ref=e278]: Every week, we select a special coffee that deserves the spotlight based on seasonality, origin, and exceptional quality.
+          - generic [ref=e279]:
+            - generic [ref=e280]: "2"
+            - heading "Perfect Pairing" [level=4] [ref=e281]
+            - paragraph [ref=e282]: We match each coffee with the ideal brewing method and provide detailed tasting notes so you know what to expect.
+          - generic [ref=e283]:
+            - generic [ref=e284]: "3"
+            - heading "Complete Experience" [level=4] [ref=e285]
+            - paragraph [ref=e286]: From food pairings to brewing tips, we give you everything needed to make the most of each featured coffee.
+  - button "Open Next.js Dev Tools" [ref=e292] [cursor=pointer]:
+    - img [ref=e293]
+  - alert [ref=e296]
+```

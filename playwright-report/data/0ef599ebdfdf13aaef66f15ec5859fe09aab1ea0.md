@@ -1,0 +1,142 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e10]:
+    - generic [ref=e16]:
+      - heading "Where to Explore Coffee" [level=1] [ref=e18]
+      - paragraph [ref=e20]: Learn how to find great cafés, understand menu items, and order coffee with confidence.
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - heading "How to Find Good Cafés" [level=2] [ref=e26]:
+            - img [ref=e27]
+            - text: How to Find Good Cafés
+          - paragraph [ref=e30]: Not all coffee shops are created equal. Here's what to look for when seeking out quality coffee.
+        - generic [ref=e31]:
+          - generic [ref=e33]:
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - text: Fresh Beans
+            - paragraph [ref=e40]: Look for shops that roast their own beans or source from local roasters. Fresh beans are usually dated.
+          - generic [ref=e42]:
+            - generic [ref=e44]:
+              - img [ref=e45]
+              - text: Skilled Baristas
+            - paragraph [ref=e49]: Good baristas know their craft. They can answer questions about origin, roast, and brewing methods.
+          - generic [ref=e51]:
+            - generic [ref=e53]:
+              - img [ref=e54]
+              - text: Multiple Brewing Methods
+            - paragraph [ref=e58]: Specialty shops often offer pour-over, AeroPress, or other manual brewing methods, not just espresso.
+          - generic [ref=e60]:
+            - generic [ref=e62]:
+              - img [ref=e63]
+              - text: Origin Information
+            - paragraph [ref=e67]: Quality cafés display information about coffee origins, processing methods, and flavor notes.
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - heading "Common Menu Items Explained" [level=2] [ref=e70]:
+            - img [ref=e71]
+            - text: Common Menu Items Explained
+          - paragraph [ref=e72]: Understanding what's on the menu helps you order exactly what you want.
+        - generic [ref=e73]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - generic [ref=e77]: Espresso
+              - generic [ref=e78]: Very Strong
+            - paragraph [ref=e80]: Concentrated coffee made by forcing hot water through finely-ground coffee under pressure.
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - generic [ref=e84]: Americano
+              - generic [ref=e85]: Medium
+            - paragraph [ref=e87]: Espresso diluted with hot water. Similar strength to drip coffee but with espresso flavor.
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - generic [ref=e91]: Cappuccino
+              - generic [ref=e92]: Medium
+            - paragraph [ref=e94]: Equal parts espresso, steamed milk, and milk foam. Rich and creamy.
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e98]: Latte
+              - generic [ref=e99]: Mild
+            - paragraph [ref=e101]: Espresso with more steamed milk and less foam than cappuccino. Smooth and milky.
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: Flat White
+              - generic [ref=e106]: Medium
+            - paragraph [ref=e108]: Similar to latte but with microfoam instead of foam. Originated in Australia/New Zealand.
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - generic [ref=e112]: Cortado
+              - generic [ref=e113]: Strong
+            - paragraph [ref=e115]: Equal parts espresso and steamed milk. Stronger than a latte, smoother than an espresso.
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Macchiato
+              - generic [ref=e120]: Very Strong
+            - paragraph [ref=e122]: Espresso "stained" with a small amount of milk foam. Strong coffee flavor.
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: Cold Brew
+              - generic [ref=e127]: Medium
+            - paragraph [ref=e129]: Coffee brewed with cold water over 12-24 hours. Smooth, sweet, less acidic.
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - heading "Understanding Coffee Terms" [level=2] [ref=e132]:
+            - img [ref=e133]
+            - text: Understanding Coffee Terms
+          - paragraph [ref=e135]: When you see these terms on a menu or bag, here's what they mean.
+        - generic [ref=e136]:
+          - generic [ref=e138]:
+            - generic [ref=e140]: Single Origin
+            - paragraph [ref=e142]: Coffee from a single geographic location, farm, or region. Allows you to taste unique characteristics of that place.
+          - generic [ref=e144]:
+            - generic [ref=e146]: Washed Process
+            - paragraph [ref=e148]: Coffee cherry fruit is removed before drying. Results in clean, bright flavors that highlight the bean's characteristics.
+          - generic [ref=e150]:
+            - generic [ref=e152]: Natural Process
+            - paragraph [ref=e154]: Coffee cherries are dried whole with fruit attached. Results in fruity, wine-like flavors. Also called "dry process."
+          - generic [ref=e156]:
+            - generic [ref=e158]: Honey Process
+            - paragraph [ref=e160]: Skin is removed but sticky fruit (mucilage) remains during drying. Results in sweet, fruity, syrupy flavors.
+      - generic [ref=e163]:
+        - generic [ref=e165]: Tips for Ordering with Confidence
+        - list [ref=e167]:
+          - listitem [ref=e168]:
+            - generic [ref=e169]: •
+            - generic [ref=e170]:
+              - strong [ref=e171]: "Ask questions:"
+              - text: Good baristas love talking about coffee. Ask about origin, roast, or flavor notes.
+          - listitem [ref=e172]:
+            - generic [ref=e173]: •
+            - generic [ref=e174]:
+              - strong [ref=e175]: "Try something new:"
+              - text: Don't always order the same thing. Ask for recommendations based on your preferences.
+          - listitem [ref=e176]:
+            - generic [ref=e177]: •
+            - generic [ref=e178]:
+              - strong [ref=e179]: "Specify your preferences:"
+              - text: Tell the barista if you like strong, mild, fruity, or chocolatey flavors.
+          - listitem [ref=e180]:
+            - generic [ref=e181]: •
+            - generic [ref=e182]:
+              - strong [ref=e183]: "Learn the menu:"
+              - text: Understanding what each drink is helps you order exactly what you want.
+          - listitem [ref=e184]:
+            - generic [ref=e185]: •
+            - generic [ref=e186]:
+              - strong [ref=e187]: "Be open to suggestions:"
+              - text: Baristas know their coffee. If they recommend something, give it a try!
+  - button "Open Next.js Dev Tools" [ref=e193] [cursor=pointer]:
+    - img [ref=e194]
+  - alert [ref=e199]
+```

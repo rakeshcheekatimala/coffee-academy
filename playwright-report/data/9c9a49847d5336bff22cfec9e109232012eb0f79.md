@@ -1,0 +1,173 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - generic [ref=e9]:
+        - link "Home" [ref=e10]:
+          - /url: /
+        - link "Learn" [ref=e11]:
+          - /url: /articles
+        - link "Recipes" [ref=e12]:
+          - /url: /recipes
+        - link "Community" [ref=e13]:
+          - /url: /community
+        - link "Featured" [ref=e14]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e15]:
+          - /url: /wizard
+        - link "Profile" [ref=e16]:
+          - /url: /profile
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - link "Back to Home" [ref=e22]:
+          - /url: /
+          - img
+          - text: Back to Home
+        - generic [ref=e23]: Level 1
+      - heading "Coffee Basics" [level=1] [ref=e26]
+      - paragraph [ref=e27]: Learn the fundamentals of coffee - what it is, where it comes from, and the different types of beans and roasts.
+    - generic [ref=e28]:
+      - generic [ref=e30]:
+        - generic [ref=e32]: What is Coffee?
+        - paragraph [ref=e34]: Coffee is a brewed drink made from roasted coffee beans, which are the seeds of berries from the Coffea plant. The plant is native to tropical regions of Africa, and coffee is now grown in over 70 countries worldwide. The two most commonly grown species are Coffea arabica (Arabica) and Coffea canephora (Robusta).
+      - generic [ref=e36]:
+        - generic [ref=e38]: A Brief History
+        - paragraph [ref=e40]: Coffee originated in Ethiopia, where legend says a goat herder named Kaldi discovered it around 850 AD. The energizing effects of coffee beans were noticed when his goats became unusually energetic after eating them. Coffee spread to the Arabian Peninsula, then to Europe, and eventually around the world. Today, coffee is one of the most popular beverages globally, with over 2.25 billion cups consumed daily.
+      - generic [ref=e42]:
+        - heading "Arabica vs Robusta" [level=3] [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e47]: Arabica
+              - paragraph [ref=e48]: The most popular coffee species, making up about 60-70% of global production.
+            - list [ref=e50]:
+              - listitem [ref=e51]:
+                - generic [ref=e52]: •
+                - generic [ref=e53]: Smooth, sweet flavor with hints of sugar, fruit, and berries
+              - listitem [ref=e54]:
+                - generic [ref=e55]: •
+                - generic [ref=e56]: Lower caffeine content (about 1.5%)
+              - listitem [ref=e57]:
+                - generic [ref=e58]: •
+                - generic [ref=e59]: More delicate and complex taste
+              - listitem [ref=e60]:
+                - generic [ref=e61]: •
+                - generic [ref=e62]: Grows at higher altitudes (600-2000m)
+              - listitem [ref=e63]:
+                - generic [ref=e64]: •
+                - generic [ref=e65]: More expensive due to cultivation requirements
+              - listitem [ref=e66]:
+                - generic [ref=e67]: •
+                - generic [ref=e68]: Preferred for specialty coffee
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]: Robusta
+              - paragraph [ref=e72]: Hardier and more disease-resistant, making it easier and cheaper to grow.
+            - list [ref=e74]:
+              - listitem [ref=e75]:
+                - generic [ref=e76]: •
+                - generic [ref=e77]: Strong, bold flavor with earthy, woody notes
+              - listitem [ref=e78]:
+                - generic [ref=e79]: •
+                - generic [ref=e80]: Higher caffeine content (about 2.7%)
+              - listitem [ref=e81]:
+                - generic [ref=e82]: •
+                - generic [ref=e83]: More bitter and less acidic
+              - listitem [ref=e84]:
+                - generic [ref=e85]: •
+                - generic [ref=e86]: Grows at lower altitudes
+              - listitem [ref=e87]:
+                - generic [ref=e88]: •
+                - generic [ref=e89]: More affordable
+              - listitem [ref=e90]:
+                - generic [ref=e91]: •
+                - generic [ref=e92]: Commonly used in espresso blends and instant coffee
+      - generic [ref=e94]:
+        - heading "Roast Levels Explained" [level=3] [ref=e95]
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]: Light Roast
+              - paragraph [ref=e100]: Light brown color, no oil on surface, toasted grain taste.
+            - list [ref=e102]:
+              - listitem [ref=e103]:
+                - generic [ref=e104]: •
+                - generic [ref=e105]: Light brown, tan color
+              - listitem [ref=e106]:
+                - generic [ref=e107]: •
+                - generic [ref=e108]: Highest acidity
+              - listitem [ref=e109]:
+                - generic [ref=e110]: •
+                - generic [ref=e111]: Most caffeine
+              - listitem [ref=e112]:
+                - generic [ref=e113]: •
+                - generic [ref=e114]: Fruity, floral, tea-like flavors
+              - listitem [ref=e115]:
+                - generic [ref=e116]: •
+                - generic [ref=e117]: Original bean flavors are most prominent
+              - listitem [ref=e118]:
+                - generic [ref=e119]: •
+                - generic [ref=e120]: "Best for: Pour-over, drip coffee"
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]: Medium Roast
+              - paragraph [ref=e124]: Medium brown color, balanced flavor, aroma, and acidity.
+            - list [ref=e126]:
+              - listitem [ref=e127]:
+                - generic [ref=e128]: •
+                - generic [ref=e129]: Medium brown color
+              - listitem [ref=e130]:
+                - generic [ref=e131]: •
+                - generic [ref=e132]: Balanced acidity and body
+              - listitem [ref=e133]:
+                - generic [ref=e134]: •
+                - generic [ref=e135]: Slightly less caffeine than light roast
+              - listitem [ref=e136]:
+                - generic [ref=e137]: •
+                - generic [ref=e138]: Caramel, nutty, chocolate notes
+              - listitem [ref=e139]:
+                - generic [ref=e140]: •
+                - generic [ref=e141]: Most popular roast level
+              - listitem [ref=e142]:
+                - generic [ref=e143]: •
+                - generic [ref=e144]: "Best for: All brewing methods"
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]: Dark Roast
+              - paragraph [ref=e148]: Dark brown to black, shiny with oil, bold and smoky flavor.
+            - list [ref=e150]:
+              - listitem [ref=e151]:
+                - generic [ref=e152]: •
+                - generic [ref=e153]: Dark brown to almost black
+              - listitem [ref=e154]:
+                - generic [ref=e155]: •
+                - generic [ref=e156]: Lowest acidity
+              - listitem [ref=e157]:
+                - generic [ref=e158]: •
+                - generic [ref=e159]: Least caffeine (slightly)
+              - listitem [ref=e160]:
+                - generic [ref=e161]: •
+                - generic [ref=e162]: Bold, smoky, bitter flavors
+              - listitem [ref=e163]:
+                - generic [ref=e164]: •
+                - generic [ref=e165]: Roast flavors dominate over bean origin
+              - listitem [ref=e166]:
+                - generic [ref=e167]: •
+                - generic [ref=e168]: "Best for: Espresso, French press"
+    - generic [ref=e169]:
+      - link "All Levels" [ref=e170]:
+        - /url: /levels/1
+      - link "Next Level" [ref=e172]:
+        - /url: /levels/2
+        - text: Next Level
+        - img
+  - button "Open Next.js Dev Tools" [ref=e178] [cursor=pointer]:
+    - img [ref=e179]
+```

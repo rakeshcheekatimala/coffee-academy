@@ -1,0 +1,155 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e14] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e15] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e17] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e18] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e19] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e20]:
+    - generic [ref=e26]:
+      - heading "Where to Explore Coffee" [level=1] [ref=e28]
+      - paragraph [ref=e30]: Learn how to find great cafés, understand menu items, and order coffee with confidence.
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - heading "How to Find Good Cafés" [level=2] [ref=e36]:
+            - img [ref=e37]
+            - text: How to Find Good Cafés
+          - paragraph [ref=e40]: Not all coffee shops are created equal. Here's what to look for when seeking out quality coffee.
+        - generic [ref=e41]:
+          - generic [ref=e43]:
+            - generic [ref=e45]:
+              - img [ref=e46]
+              - text: Fresh Beans
+            - paragraph [ref=e50]: Look for shops that roast their own beans or source from local roasters. Fresh beans are usually dated.
+          - generic [ref=e52]:
+            - generic [ref=e54]:
+              - img [ref=e55]
+              - text: Skilled Baristas
+            - paragraph [ref=e59]: Good baristas know their craft. They can answer questions about origin, roast, and brewing methods.
+          - generic [ref=e61]:
+            - generic [ref=e63]:
+              - img [ref=e64]
+              - text: Multiple Brewing Methods
+            - paragraph [ref=e68]: Specialty shops often offer pour-over, AeroPress, or other manual brewing methods, not just espresso.
+          - generic [ref=e70]:
+            - generic [ref=e72]:
+              - img [ref=e73]
+              - text: Origin Information
+            - paragraph [ref=e77]: Quality cafés display information about coffee origins, processing methods, and flavor notes.
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - heading "Common Menu Items Explained" [level=2] [ref=e80]:
+            - img [ref=e81]
+            - text: Common Menu Items Explained
+          - paragraph [ref=e85]: Understanding what's on the menu helps you order exactly what you want.
+        - generic [ref=e86]:
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - generic [ref=e90]: Espresso
+              - generic [ref=e91]: Very Strong
+            - paragraph [ref=e93]: Concentrated coffee made by forcing hot water through finely-ground coffee under pressure.
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Americano
+              - generic [ref=e98]: Medium
+            - paragraph [ref=e100]: Espresso diluted with hot water. Similar strength to drip coffee but with espresso flavor.
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]: Cappuccino
+              - generic [ref=e105]: Medium
+            - paragraph [ref=e107]: Equal parts espresso, steamed milk, and milk foam. Rich and creamy.
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: Latte
+              - generic [ref=e112]: Mild
+            - paragraph [ref=e114]: Espresso with more steamed milk and less foam than cappuccino. Smooth and milky.
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e118]: Flat White
+              - generic [ref=e119]: Medium
+            - paragraph [ref=e121]: Similar to latte but with microfoam instead of foam. Originated in Australia/New Zealand.
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]: Cortado
+              - generic [ref=e126]: Strong
+            - paragraph [ref=e128]: Equal parts espresso and steamed milk. Stronger than a latte, smoother than an espresso.
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]: Macchiato
+              - generic [ref=e133]: Very Strong
+            - paragraph [ref=e135]: Espresso "stained" with a small amount of milk foam. Strong coffee flavor.
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]: Cold Brew
+              - generic [ref=e140]: Medium
+            - paragraph [ref=e142]: Coffee brewed with cold water over 12-24 hours. Smooth, sweet, less acidic.
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "Understanding Coffee Terms" [level=2] [ref=e145]:
+            - img [ref=e146]
+            - text: Understanding Coffee Terms
+          - paragraph [ref=e151]: When you see these terms on a menu or bag, here's what they mean.
+        - generic [ref=e152]:
+          - generic [ref=e154]:
+            - generic [ref=e156]: Single Origin
+            - paragraph [ref=e158]: Coffee from a single geographic location, farm, or region. Allows you to taste unique characteristics of that place.
+          - generic [ref=e160]:
+            - generic [ref=e162]: Washed Process
+            - paragraph [ref=e164]: Coffee cherry fruit is removed before drying. Results in clean, bright flavors that highlight the bean's characteristics.
+          - generic [ref=e166]:
+            - generic [ref=e168]: Natural Process
+            - paragraph [ref=e170]: Coffee cherries are dried whole with fruit attached. Results in fruity, wine-like flavors. Also called "dry process."
+          - generic [ref=e172]:
+            - generic [ref=e174]: Honey Process
+            - paragraph [ref=e176]: Skin is removed but sticky fruit (mucilage) remains during drying. Results in sweet, fruity, syrupy flavors.
+      - generic [ref=e179]:
+        - generic [ref=e181]: Tips for Ordering with Confidence
+        - list [ref=e183]:
+          - listitem [ref=e184]:
+            - generic [ref=e185]: •
+            - generic [ref=e186]:
+              - strong [ref=e187]: "Ask questions:"
+              - text: Good baristas love talking about coffee. Ask about origin, roast, or flavor notes.
+          - listitem [ref=e188]:
+            - generic [ref=e189]: •
+            - generic [ref=e190]:
+              - strong [ref=e191]: "Try something new:"
+              - text: Don't always order the same thing. Ask for recommendations based on your preferences.
+          - listitem [ref=e192]:
+            - generic [ref=e193]: •
+            - generic [ref=e194]:
+              - strong [ref=e195]: "Specify your preferences:"
+              - text: Tell the barista if you like strong, mild, fruity, or chocolatey flavors.
+          - listitem [ref=e196]:
+            - generic [ref=e197]: •
+            - generic [ref=e198]:
+              - strong [ref=e199]: "Learn the menu:"
+              - text: Understanding what each drink is helps you order exactly what you want.
+          - listitem [ref=e200]:
+            - generic [ref=e201]: •
+            - generic [ref=e202]:
+              - strong [ref=e203]: "Be open to suggestions:"
+              - text: Baristas know their coffee. If they recommend something, give it a try!
+  - button "Open Next.js Dev Tools" [ref=e209] [cursor=pointer]:
+    - img [ref=e210]
+  - alert [ref=e214]
+```

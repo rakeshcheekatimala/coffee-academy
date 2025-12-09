@@ -13,6 +13,7 @@ import { RecipeSubmissionForm, RecipeFormData } from '@/components/community/Rec
 import { addUserBrew, addUserRecipe, getCurrentUser, setCurrentUser } from '@/lib/content/userContent';
 import { motion } from 'framer-motion';
 import { Camera, BookOpen, User, Check, X, Plus } from 'lucide-react';
+import { trackBrewSubmission, trackRecipeSubmission } from '@/lib/utils/analytics';
 
 function SubmitPageContent() {
   const searchParams = useSearchParams();
@@ -72,6 +73,7 @@ function SubmitPageContent() {
       rating: brewForm.rating,
     });
     
+    trackBrewSubmission(brewForm.recipeId || undefined);
     setSubmitted(true);
     setTimeout(() => router.push('/community/brews'), 2000);
   };
@@ -107,6 +109,7 @@ function SubmitPageContent() {
       tasteNotes: data.tasteNotes,
     });
     
+    trackRecipeSubmission(data.category, data.difficulty);
     setSubmitted(true);
     setTimeout(() => router.push('/community/recipes'), 2000);
   };

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 interface HeroProps {
   title: string;
@@ -100,7 +101,10 @@ export function Hero({ title, description, ctaText, ctaLink, backgroundImage }: 
               size="lg" 
               className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white text-base md:text-lg px-8 py-6 rounded-full shadow-lg shadow-amber-900/30 hover:shadow-xl hover:shadow-amber-800/40 transition-all duration-300 font-medium border border-amber-500/20 hover:border-amber-400/30"
             >
-              <Link href={ctaLink}>
+              <Link 
+                href={ctaLink}
+                onClick={() => trackCTAClick(ctaText || '', 'hero', ctaLink || '')}
+              >
                 {ctaText}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

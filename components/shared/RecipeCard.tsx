@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Clock, Users, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import { Recipe } from '@/lib/types';
+import { trackRecipeClick } from '@/lib/utils/analytics';
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -78,7 +79,10 @@ export function RecipeCard({ recipe, index = 0 }: RecipeCardProps) {
         </CardContent>
         <CardFooter>
           <Button asChild className="w-full" variant="default">
-            <Link href={`/recipes/${recipe.id}`}>
+            <Link 
+              href={`/recipes/${recipe.id}`}
+              onClick={() => trackRecipeClick(recipe.id, recipe.title, 'recipe_card')}
+            >
               View Recipe
             </Link>
           </Button>

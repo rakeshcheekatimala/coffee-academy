@@ -1,0 +1,155 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - button [ref=e12]:
+        - img
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e24]:
+        - img [ref=e27]
+        - heading "The Coffee Journey" [level=1] [ref=e32]
+        - paragraph [ref=e33]: From humble bean to perfect cup
+        - paragraph [ref=e34]: Discover the art, science, and passion behind every sip
+        - generic [ref=e35]:
+          - link "Find Your Perfect Brew" [ref=e36] [cursor=pointer]:
+            - /url: /wizard
+          - link "Start Learning" [ref=e37] [cursor=pointer]:
+            - /url: /levels
+      - generic [ref=e38]:
+        - generic [ref=e39]: Scroll to explore
+        - img [ref=e41]
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e51]: Stage 1
+        - img [ref=e55]
+        - heading "The Bean" [level=2] [ref=e58]
+        - paragraph [ref=e59]: Where it all begins
+        - paragraph [ref=e60]: Every great cup of coffee starts with a humble seed. Coffee beans are actually seeds from the Coffea plant, primarily grown in the "Bean Belt" — the tropical region between the Tropics of Cancer and Capricorn.
+        - list [ref=e61]:
+          - listitem [ref=e62]:
+            - generic [ref=e64]: Arabica and Robusta are the two main species
+          - listitem [ref=e65]:
+            - generic [ref=e67]: Altitude, climate, and soil affect flavor profiles
+          - listitem [ref=e68]:
+            - generic [ref=e70]: Single-origin beans showcase unique regional characteristics
+          - listitem [ref=e71]:
+            - generic [ref=e73]: Harvesting method impacts final quality
+      - img [ref=e82]
+    - generic [ref=e90]:
+      - img [ref=e92]
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e105]: Stage 2
+          - img [ref=e109]
+          - heading "The Roast" [level=2] [ref=e111]
+          - paragraph [ref=e112]: Unlocking the flavor
+          - paragraph [ref=e113]: Roasting transforms green coffee beans into the aromatic, flavorful beans we know and love. This crucial step develops over 800 different compounds that create coffee's complex taste profile.
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - generic [ref=e117]: Light roasts preserve origin flavors and have higher acidity
+            - listitem [ref=e118]:
+              - generic [ref=e120]: Medium roasts balance acidity with body
+            - listitem [ref=e121]:
+              - generic [ref=e123]: Dark roasts bring out bold, smoky notes
+            - listitem [ref=e124]:
+              - generic [ref=e126]: The "first crack" and "second crack" mark key roasting stages
+        - img [ref=e135]
+    - generic [ref=e151]:
+      - img [ref=e153]
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e163]: Stage 3
+          - img [ref=e167]
+          - heading "The Brew" [level=2] [ref=e170]
+          - paragraph [ref=e171]: The art of extraction
+          - paragraph [ref=e172]: Brewing is where science meets art. Water temperature, grind size, and extraction time work together to pull the perfect balance of flavors from your roasted beans.
+          - list [ref=e173]:
+            - listitem [ref=e174]:
+              - generic [ref=e176]: "Water temperature: 195-205°F (90-96°C) is ideal"
+            - listitem [ref=e177]:
+              - generic [ref=e179]: Grind size determines extraction rate
+            - listitem [ref=e180]:
+              - generic [ref=e182]: Brew ratio typically ranges from 1:15 to 1:18 coffee to water
+            - listitem [ref=e183]:
+              - generic [ref=e185]: Different methods highlight different flavor characteristics
+        - img [ref=e194]
+    - generic [ref=e205]:
+      - img [ref=e207]
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - generic [ref=e216]: Stage 4
+          - img [ref=e220]
+          - heading "The Cup" [level=2] [ref=e225]
+          - paragraph [ref=e226]: The perfect moment
+          - paragraph [ref=e227]: The final destination of your coffee journey — a perfectly crafted cup that tells the story of its origin, roasting, and brewing. Take a moment to appreciate the complexity in every sip.
+          - list [ref=e228]:
+            - listitem [ref=e229]:
+              - generic [ref=e231]: Aroma accounts for much of what we perceive as taste
+            - listitem [ref=e232]:
+              - generic [ref=e234]: Temperature affects flavor perception
+            - listitem [ref=e235]:
+              - generic [ref=e237]: Tasting notes range from fruity to nutty to chocolatey
+            - listitem [ref=e238]:
+              - generic [ref=e240]: The aftertaste (finish) reveals hidden complexities
+        - img [ref=e249]
+    - img [ref=e261]
+    - generic [ref=e264]:
+      - generic [ref=e265]:
+        - heading "Start Your Journey" [level=2] [ref=e266]
+        - paragraph [ref=e267]: Everything you need to become a coffee connoisseur
+      - generic [ref=e268]:
+        - link "Learn Interactive lessons from bean basics to advanced brewing techniques" [ref=e270] [cursor=pointer]:
+          - /url: /levels
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - img [ref=e274]
+              - generic [ref=e277]: Learn
+            - generic [ref=e279]: Interactive lessons from bean basics to advanced brewing techniques
+        - link "Discover Find your perfect coffee with our personalized recommendation wizard" [ref=e281] [cursor=pointer]:
+          - /url: /wizard
+          - generic [ref=e282]:
+            - generic [ref=e283]:
+              - img [ref=e285]
+              - generic [ref=e290]: Discover
+            - generic [ref=e292]: Find your perfect coffee with our personalized recommendation wizard
+        - link "Brew Step-by-step recipes for every brewing method" [ref=e294] [cursor=pointer]:
+          - /url: /recipes
+          - generic [ref=e295]:
+            - generic [ref=e296]:
+              - img [ref=e298]
+              - generic [ref=e303]: Brew
+            - generic [ref=e305]: Step-by-step recipes for every brewing method
+        - link "Connect Join our community of coffee enthusiasts" [ref=e307] [cursor=pointer]:
+          - /url: /community
+          - generic [ref=e308]:
+            - generic [ref=e309]:
+              - img [ref=e311]
+              - generic [ref=e316]: Connect
+            - generic [ref=e318]: Join our community of coffee enthusiasts
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - img [ref=e323]
+        - generic [ref=e325]: Featured This Week
+      - heading "Brew of the Week" [level=2] [ref=e326]
+      - paragraph [ref=e327]: Discover our curated weekly selection of exceptional coffees and brewing methods
+      - link "See This Week's Pick" [ref=e328] [cursor=pointer]:
+        - /url: /brew-of-the-week
+    - generic [ref=e331]:
+      - heading "Ready to Begin?" [level=3] [ref=e332]
+      - paragraph [ref=e333]: Whether you're a complete beginner or a seasoned enthusiast, there's always more to discover in the world of coffee.
+      - generic [ref=e334]:
+        - link "Take the Coffee Quiz" [ref=e335] [cursor=pointer]:
+          - /url: /wizard
+        - link "Browse Recipes" [ref=e336] [cursor=pointer]:
+          - /url: /recipes
+  - button "Open Next.js Dev Tools" [ref=e342] [cursor=pointer]:
+    - img [ref=e343]
+  - alert [ref=e347]
+```

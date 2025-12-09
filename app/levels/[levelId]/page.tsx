@@ -12,6 +12,7 @@ import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { GrindSizeVisual } from '@/components/shared/GrindSizeVisual';
+import { trackLevelView, trackLevelNavigation } from '@/lib/utils/analytics';
 
 interface LevelPageProps {
   params: Promise<{ levelId: string }>;
@@ -32,6 +33,13 @@ export default function LevelPage({ params }: LevelPageProps) {
 
   // Check if level 6 (Grind Size Guide) to show special component
   const isGrindSizeLevel = levelNumber === 6;
+
+  // Track level view
+  useEffect(() => {
+    if (level) {
+      trackLevelView(level.id, level.title);
+    }
+  }, [level]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -71,7 +79,10 @@ export default function LevelPage({ params }: LevelPageProps) {
           <div className="flex-1">
             {previousLevel ? (
               <Button asChild variant="outline" className="w-full md:w-auto">
-                <Link href={`/levels/${previousLevel}`}>
+                <Link 
+                  href={`/levels/${previousLevel}`}
+                  onClick={() => trackLevelNavigation('previous', levelNumber, previousLevel)}
+                >
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Previous Level
                 </Link>
@@ -88,7 +99,10 @@ export default function LevelPage({ params }: LevelPageProps) {
           <div className="flex-1 flex justify-end">
             {nextLevel ? (
               <Button asChild className="w-full md:w-auto">
-                <Link href={`/levels/${nextLevel}`}>
+                <Link 
+                  href={`/levels/${nextLevel}`}
+                  onClick={() => trackLevelNavigation('next', levelNumber, nextLevel)}
+                >
                   Next Level
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>

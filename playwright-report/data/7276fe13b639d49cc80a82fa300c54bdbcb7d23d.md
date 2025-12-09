@@ -1,0 +1,45 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - generic [ref=e9]:
+        - link "Home" [ref=e10]:
+          - /url: /
+        - link "Learn" [ref=e11]:
+          - /url: /articles
+        - link "Recipes" [ref=e12]:
+          - /url: /recipes
+        - link "Community" [ref=e13]:
+          - /url: /community
+        - link "Featured" [ref=e14]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e15]:
+          - /url: /wizard
+        - link "Profile" [ref=e16]:
+          - /url: /profile
+  - generic [ref=e17]:
+    - generic [ref=e23]:
+      - heading "Find Your Coffee Flavor Profile" [level=1] [ref=e25]
+      - paragraph [ref=e27]: Answer a few questions to discover your perfect coffee match.
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: Question
+        - generic [ref=e35]: 2 / 5
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: How do you prefer your coffee strength?
+          - generic [ref=e42]: Question 2 of 5
+        - generic [ref=e43]:
+          - button "Light and mild" [ref=e44]
+          - button "Medium and balanced" [ref=e45]
+          - button "Strong and bold" [ref=e46]
+  - button "Open Next.js Dev Tools" [ref=e52] [cursor=pointer]:
+    - img [ref=e53]
+  - alert [ref=e58]
+```

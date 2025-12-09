@@ -9,6 +9,8 @@ import { Clock, Calendar, User, ArrowLeft, BookOpen, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { Article } from '@/lib/types';
 import { ArticleCard } from './ArticleCard';
+import { trackArticleView, trackCTAClick } from '@/lib/utils/analytics';
+import { useEffect } from 'react';
 
 interface ArticleContentProps {
   article: Article;
@@ -194,6 +196,10 @@ function parseContent(content: string): React.ReactNode {
 }
 
 export function ArticleContent({ article, relatedArticles = [] }: ArticleContentProps) {
+  useEffect(() => {
+    trackArticleView(article.slug, article.title);
+  }, [article.slug, article.title]);
+
   return (
     <article className="max-w-4xl mx-auto">
       {/* Back button */}
@@ -329,10 +335,20 @@ export function ArticleContent({ article, relatedArticles = [] }: ArticleContent
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="bg-amber-600 hover:bg-amber-500">
-                <Link href="/wizard">Take the Coffee Quiz</Link>
+                <Link 
+                  href="/wizard"
+                  onClick={() => trackCTAClick('Take the Coffee Quiz', 'article_bottom', '/wizard')}
+                >
+                  Take the Coffee Quiz
+                </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/recipes">Browse Recipes</Link>
+                <Link 
+                  href="/recipes"
+                  onClick={() => trackCTAClick('Browse Recipes', 'article_bottom', '/recipes')}
+                >
+                  Browse Recipes
+                </Link>
               </Button>
             </div>
           </CardContent>

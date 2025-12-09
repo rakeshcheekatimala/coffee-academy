@@ -1,0 +1,82 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - generic [ref=e9]:
+        - link "Home" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e11] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e12] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e13] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e14] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e15] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e16] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e17]:
+    - generic [ref=e23]:
+      - heading "Coffee Learning Levels" [level=1] [ref=e25]
+      - paragraph [ref=e27]: Progress through our comprehensive coffee education system. Complete each level to unlock new knowledge and skills.
+    - generic [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e37]: Level 1
+          - generic [ref=e38]: Coffee Basics
+          - generic [ref=e39]: Learn the fundamentals of coffee - what it is, where it comes from, and the different types of beans and roasts.
+        - paragraph [ref=e42]: 4 sections
+        - link "Start Level" [ref=e44] [cursor=pointer]:
+          - /url: /levels/1
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e50]: Level 2
+          - generic [ref=e51]: Coffee Gear & Tools
+          - generic [ref=e52]: Discover the essential equipment you need to brew great coffee at home.
+        - paragraph [ref=e55]: 7 sections
+        - link "Start Level" [ref=e57] [cursor=pointer]:
+          - /url: /levels/2
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e63]: Level 3
+          - generic [ref=e64]: What is Brewing?
+          - generic [ref=e65]: Understand the science and fundamentals of coffee brewing.
+        - paragraph [ref=e68]: 5 sections
+        - link "Start Level" [ref=e70] [cursor=pointer]:
+          - /url: /levels/3
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e76]: Level 4
+          - generic [ref=e77]: Brewing Methods
+          - generic [ref=e78]: Explore different brewing methods and find your favorite.
+        - paragraph [ref=e81]: 2 sections
+        - link "Start Level" [ref=e83] [cursor=pointer]:
+          - /url: /levels/4
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e89]: Level 5
+          - generic [ref=e90]: Coffee Tasting
+          - generic [ref=e91]: Learn how to taste and appreciate coffee like a professional.
+        - paragraph [ref=e94]: 7 sections
+        - link "Start Level" [ref=e96] [cursor=pointer]:
+          - /url: /levels/5
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e102]: Level 6
+          - generic [ref=e103]: Grind Size Guide
+          - generic [ref=e104]: Master grind sizes for perfect brewing.
+        - paragraph [ref=e107]: 5 sections
+        - link "Start Level" [ref=e109] [cursor=pointer]:
+          - /url: /levels/6
+  - button "Open Next.js Dev Tools" [ref=e115] [cursor=pointer]:
+    - img [ref=e116]
+  - alert [ref=e119]
+```

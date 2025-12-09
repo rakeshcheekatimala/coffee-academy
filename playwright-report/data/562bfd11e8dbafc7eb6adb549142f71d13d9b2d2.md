@@ -1,0 +1,67 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e8]: Coffee Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e10]:
+    - generic [ref=e16]:
+      - heading "Your Profile" [level=1] [ref=e18]
+      - paragraph [ref=e20]: Manage your preferences, favorites, and coffee journey progress.
+    - generic [ref=e23]:
+      - generic [ref=e27]:
+        - generic [ref=e28]: G
+        - generic [ref=e29]:
+          - heading "Guest" [level=2] [ref=e30]
+          - paragraph [ref=e31]: Create a profile to save your data
+        - link "Create Profile" [ref=e32]:
+          - /url: /community/submit
+          - img
+          - text: Create Profile
+      - generic [ref=e33]:
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - generic [ref=e38]: "0"
+          - generic [ref=e39]: Favorites
+        - generic [ref=e41]:
+          - img [ref=e42]
+          - generic [ref=e44]: "0"
+          - generic [ref=e45]: Recipes Viewed
+        - generic [ref=e47]:
+          - img [ref=e48]
+          - generic [ref=e50]: "0"
+          - generic [ref=e51]: Articles Read
+        - generic [ref=e53]:
+          - img [ref=e54]
+          - generic [ref=e57]: "0"
+          - generic [ref=e58]: Items Explored
+      - generic [ref=e59]:
+        - tablist [ref=e60]:
+          - tab "Preferences" [ref=e61]:
+            - img
+            - text: Preferences
+          - tab "Favorites" [ref=e62]:
+            - img
+            - text: Favorites
+          - tab "History" [active] [selected] [ref=e63]:
+            - img
+            - text: History
+        - tabpanel "History" [ref=e64]:
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]: Recently Viewed
+              - generic [ref=e69]: Your browsing history across the site
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - paragraph [ref=e75]: No history yet
+              - paragraph [ref=e76]: Start exploring recipes and articles!
+  - button "Open Next.js Dev Tools" [ref=e82] [cursor=pointer]:
+    - img [ref=e83]
+  - alert [ref=e88]
+```

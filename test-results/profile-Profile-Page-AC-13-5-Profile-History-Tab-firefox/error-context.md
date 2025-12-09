@@ -1,0 +1,80 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e14] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e15] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e17] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e18] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e19] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e20]:
+    - generic [ref=e26]:
+      - heading "Your Profile" [level=1] [ref=e28]
+      - paragraph [ref=e30]: Manage your preferences, favorites, and coffee journey progress.
+    - generic [ref=e33]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: G
+        - generic [ref=e39]:
+          - heading "Guest" [level=2] [ref=e40]
+          - paragraph [ref=e41]: Create a profile to save your data
+        - link "Create Profile" [ref=e42] [cursor=pointer]:
+          - /url: /community/submit
+          - img
+          - text: Create Profile
+      - generic [ref=e43]:
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - generic [ref=e48]: "0"
+          - generic [ref=e49]: Favorites
+        - generic [ref=e51]:
+          - img [ref=e52]
+          - generic [ref=e57]: "0"
+          - generic [ref=e58]: Recipes Viewed
+        - generic [ref=e60]:
+          - img [ref=e61]
+          - generic [ref=e64]: "0"
+          - generic [ref=e65]: Articles Read
+        - generic [ref=e67]:
+          - img [ref=e68]
+          - generic [ref=e71]: "0"
+          - generic [ref=e72]: Items Explored
+      - generic [ref=e73]:
+        - tablist [ref=e74]:
+          - tab "Preferences" [ref=e75]:
+            - img
+            - text: Preferences
+          - tab "Favorites" [ref=e76]:
+            - img
+            - text: Favorites
+          - tab "History" [active] [selected] [ref=e77]:
+            - img
+            - text: History
+        - tabpanel "History" [ref=e78]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]: Recently Viewed
+              - generic [ref=e83]: Your browsing history across the site
+            - generic [ref=e85]:
+              - img [ref=e86]
+              - paragraph [ref=e89]: No history yet
+              - paragraph [ref=e90]: Start exploring recipes and articles!
+  - button "Open Next.js Dev Tools" [ref=e96] [cursor=pointer]:
+    - img [ref=e97]
+  - alert [ref=e101]
+```

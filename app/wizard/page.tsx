@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { Hero } from '@/components/shared/Hero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,7 @@ import { getAllRecommendations } from '@/lib/content/recommendations';
 import { getAllRecipes } from '@/lib/content/recipes';
 import { WizardPreferences, CoffeeRecommendation, Recipe, Equipment } from '@/lib/types';
 import { ArrowLeft, Check } from 'lucide-react';
+import { trackWizardStart, trackWizardStep, trackWizardComplete } from '@/lib/utils/analytics';
 
 interface WizardStep {
   id: keyof WizardPreferences | 'welcome';
@@ -143,19 +144,28 @@ export default function WizardPage() {
   const [multiSelectValues, setMultiSelectValues] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
 
+  // Track wizard start
+  useEffect(() => {
+    if (currentStep === 0 && !showResults) {
+      trackWizardStart();
+    }
+  }, []);
+
   const currentStepData = wizardSteps[currentStep];
 
   const handleSingleSelect = useCallback((value: string) => {
     const stepId = currentStepData.id as keyof WizardPreferences;
+    trackWizardStep(currentStep + 1, stepId, value);
     setPreferences(prev => ({ ...prev, [stepId]: value }));
     
     // Auto-advance for single select
     if (currentStep < wizardSteps.length - 1) {
       setTimeout(() => setCurrentStep(prev => prev + 1), 300);
     } else {
+      trackWizardComplete({ ...preferences, [stepId]: value });
       setTimeout(() => setShowResults(true), 300);
     }
-  }, [currentStep, currentStepData.id]);
+  }, [currentStep, currentStepData.id, preferences]);
 
   const handleMultiSelect = useCallback((value: string) => {
     setMultiSelectValues(prev => {
@@ -172,15 +182,17 @@ export default function WizardPage() {
   const handleMultiSelectConfirm = useCallback(() => {
     const stepId = currentStepData.id as keyof WizardPreferences;
     const values = multiSelectValues.length > 0 ? multiSelectValues : ['any'];
+    trackWizardStep(currentStep + 1, stepId, values);
     setPreferences(prev => ({ ...prev, [stepId]: values }));
     setMultiSelectValues([]);
     
     if (currentStep < wizardSteps.length - 1) {
       setCurrentStep(prev => prev + 1);
     } else {
+      trackWizardComplete({ ...preferences, [stepId]: values });
       setShowResults(true);
     }
-  }, [currentStep, currentStepData.id, multiSelectValues]);
+  }, [currentStep, currentStepData.id, multiSelectValues, preferences]);
 
   const handleBack = useCallback(() => {
     if (currentStep > 0) {

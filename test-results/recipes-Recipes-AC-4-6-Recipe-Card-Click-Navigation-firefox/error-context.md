@@ -1,0 +1,300 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Coffee Academy" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e11]: Coffee Academy
+      - generic [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /
+        - link "Learn" [ref=e14] [cursor=pointer]:
+          - /url: /articles
+        - link "Recipes" [ref=e15] [cursor=pointer]:
+          - /url: /recipes
+        - link "Community" [ref=e16] [cursor=pointer]:
+          - /url: /community
+        - link "Featured" [ref=e17] [cursor=pointer]:
+          - /url: /brew-of-the-week
+        - link "Find Your Brew" [ref=e18] [cursor=pointer]:
+          - /url: /wizard
+        - link "Profile" [ref=e19] [cursor=pointer]:
+          - /url: /profile
+  - generic [ref=e20]:
+    - generic [ref=e26]:
+      - heading "Coffee Recipes" [level=1] [ref=e28]
+      - paragraph [ref=e30]: Step-by-step guides to make delicious coffee drinks at home. From simple pour-over to complex espresso drinks.
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - img [ref=e36]
+        - textbox "Search recipes..." [ref=e39]
+      - generic [ref=e40]:
+        - tablist [ref=e41]:
+          - tab "All" [selected] [ref=e42]
+          - tab "Hot" [ref=e43]
+          - tab "Cold" [ref=e44]
+          - tab "Beginner" [ref=e45]
+        - tabpanel "All" [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - generic [ref=e51]:
+                  - generic [ref=e52]: hot
+                  - generic [ref=e53]: medium
+                - generic [ref=e54]: V60 Pour-Over
+                - generic [ref=e55]: Clean, bright coffee with full control over the brewing process.
+              - generic [ref=e56]:
+                - generic [ref=e57]:
+                  - generic [ref=e58]:
+                    - img [ref=e59]
+                    - generic [ref=e62]: 4 minutes
+                  - generic [ref=e63]:
+                    - img [ref=e64]
+                    - generic [ref=e69]: 1 serving
+                  - generic [ref=e70]:
+                    - img [ref=e71]
+                    - generic [ref=e76]: medium coarse
+                - generic [ref=e77]:
+                  - paragraph [ref=e78]: "Ingredients:"
+                  - list [ref=e79]:
+                    - listitem [ref=e80]: 20 g Coffee beans
+                    - listitem [ref=e81]: 300 ml Water
+              - link "View Recipe" [ref=e83] [cursor=pointer]:
+                - /url: /recipes/v60-pour-over
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - generic [ref=e88]: hot
+                  - generic [ref=e89]: easy
+                - generic [ref=e90]: French Press
+                - generic [ref=e91]: Rich, full-bodied coffee with a simple immersion method.
+              - generic [ref=e92]:
+                - generic [ref=e93]:
+                  - generic [ref=e94]:
+                    - img [ref=e95]
+                    - generic [ref=e98]: 5 minutes
+                  - generic [ref=e99]:
+                    - img [ref=e100]
+                    - generic [ref=e105]: 2 servings
+                  - generic [ref=e106]:
+                    - img [ref=e107]
+                    - generic [ref=e112]: coarse
+                - generic [ref=e113]:
+                  - paragraph [ref=e114]: "Ingredients:"
+                  - list [ref=e115]:
+                    - listitem [ref=e116]: 30 g Coffee beans
+                    - listitem [ref=e117]: 500 ml Water
+              - link "View Recipe" [ref=e119] [cursor=pointer]:
+                - /url: /recipes/french-press
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - generic [ref=e124]: hot
+                  - generic [ref=e125]: easy
+                - generic [ref=e126]: AeroPress
+                - generic [ref=e127]: Quick, clean coffee that's perfect for travel or home.
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]:
+                    - img [ref=e131]
+                    - generic [ref=e134]: 2 minutes
+                  - generic [ref=e135]:
+                    - img [ref=e136]
+                    - generic [ref=e141]: 1 serving
+                  - generic [ref=e142]:
+                    - img [ref=e143]
+                    - generic [ref=e148]: medium fine
+                - generic [ref=e149]:
+                  - paragraph [ref=e150]: "Ingredients:"
+                  - list [ref=e151]:
+                    - listitem [ref=e152]: 15 g Coffee beans
+                    - listitem [ref=e153]: 250 ml Water
+              - link "View Recipe" [ref=e155] [cursor=pointer]:
+                - /url: /recipes/aeropress
+            - generic [ref=e157]:
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - generic [ref=e160]: cold
+                  - generic [ref=e161]: easy
+                - generic [ref=e162]: Cold Brew Concentrate
+                - generic [ref=e163]: Smooth, sweet coffee perfect for iced drinks.
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - generic [ref=e166]:
+                    - img [ref=e167]
+                    - generic [ref=e170]: 12-24 hours
+                  - generic [ref=e171]:
+                    - img [ref=e172]
+                    - generic [ref=e177]: 4 servings
+                  - generic [ref=e178]:
+                    - img [ref=e179]
+                    - generic [ref=e184]: coarse
+                - generic [ref=e185]:
+                  - paragraph [ref=e186]: "Ingredients:"
+                  - list [ref=e187]:
+                    - listitem [ref=e188]: 100 g Coffee beans
+                    - listitem [ref=e189]: 600 ml Cold water
+              - link "View Recipe" [ref=e191] [cursor=pointer]:
+                - /url: /recipes/cold-brew
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - generic [ref=e195]:
+                  - generic [ref=e196]: cold
+                  - generic [ref=e197]: easy
+                - generic [ref=e198]: Iced Latte
+                - generic [ref=e199]: Refreshing iced coffee with creamy milk.
+              - generic [ref=e200]:
+                - generic [ref=e201]:
+                  - generic [ref=e202]:
+                    - img [ref=e203]
+                    - generic [ref=e206]: 5 minutes
+                  - generic [ref=e207]:
+                    - img [ref=e208]
+                    - generic [ref=e213]: 1 serving
+                  - generic [ref=e214]:
+                    - img [ref=e215]
+                    - generic [ref=e220]: fine
+                - generic [ref=e221]:
+                  - paragraph [ref=e222]: "Ingredients:"
+                  - list [ref=e223]:
+                    - listitem [ref=e224]: 2 shots (60ml) Espresso or strong coffee
+                    - listitem [ref=e225]: 120 ml Milk
+                    - listitem [ref=e226]: 1 cup Ice
+                    - listitem [ref=e227]: + 1 more
+              - link "View Recipe" [ref=e229] [cursor=pointer]:
+                - /url: /recipes/iced-latte
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - generic [ref=e233]:
+                  - generic [ref=e234]: hot
+                  - generic [ref=e235]: medium
+                - generic [ref=e236]: Cappuccino
+                - generic [ref=e237]: Classic Italian coffee with equal parts espresso, steamed milk, and foam.
+              - generic [ref=e238]:
+                - generic [ref=e239]:
+                  - generic [ref=e240]:
+                    - img [ref=e241]
+                    - generic [ref=e244]: 5 minutes
+                  - generic [ref=e245]:
+                    - img [ref=e246]
+                    - generic [ref=e251]: 1 serving
+                  - generic [ref=e252]:
+                    - img [ref=e253]
+                    - generic [ref=e258]: fine
+                - generic [ref=e259]:
+                  - paragraph [ref=e260]: "Ingredients:"
+                  - list [ref=e261]:
+                    - listitem [ref=e262]: 1 shot (30ml) Espresso
+                    - listitem [ref=e263]: 60 ml Milk
+              - link "View Recipe" [ref=e265] [cursor=pointer]:
+                - /url: /recipes/cappuccino
+            - generic [ref=e267]:
+              - generic [ref=e268]:
+                - generic [ref=e269]:
+                  - generic [ref=e270]: hot
+                  - generic [ref=e271]: medium
+                - generic [ref=e272]: Basic Latte
+                - generic [ref=e273]: Smooth espresso with steamed milk - a coffee shop favorite.
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - generic [ref=e276]:
+                    - img [ref=e277]
+                    - generic [ref=e280]: 5 minutes
+                  - generic [ref=e281]:
+                    - img [ref=e282]
+                    - generic [ref=e287]: 1 serving
+                  - generic [ref=e288]:
+                    - img [ref=e289]
+                    - generic [ref=e294]: fine
+                - generic [ref=e295]:
+                  - paragraph [ref=e296]: "Ingredients:"
+                  - list [ref=e297]:
+                    - listitem [ref=e298]: 1-2 shots (30-60ml) Espresso
+                    - listitem [ref=e299]: 180-240 ml Milk
+              - link "View Recipe" [ref=e301] [cursor=pointer]:
+                - /url: /recipes/basic-latte
+            - generic [ref=e303]:
+              - generic [ref=e304]:
+                - generic [ref=e305]:
+                  - generic [ref=e306]: hot
+                  - generic [ref=e307]: easy
+                - generic [ref=e308]: Mocha
+                - generic [ref=e309]: Chocolatey coffee drink that's perfect for dessert lovers.
+              - generic [ref=e310]:
+                - generic [ref=e311]:
+                  - generic [ref=e312]:
+                    - img [ref=e313]
+                    - generic [ref=e316]: 5 minutes
+                  - generic [ref=e317]:
+                    - img [ref=e318]
+                    - generic [ref=e323]: 1 serving
+                  - generic [ref=e324]:
+                    - img [ref=e325]
+                    - generic [ref=e330]: fine
+                - generic [ref=e331]:
+                  - paragraph [ref=e332]: "Ingredients:"
+                  - list [ref=e333]:
+                    - listitem [ref=e334]: 1-2 shots (30-60ml) Espresso
+                    - listitem [ref=e335]: 1-2 tbsp Chocolate syrup or cocoa powder
+                    - listitem [ref=e336]: 180-240 ml Milk
+                    - listitem [ref=e337]: + 1 more
+              - link "View Recipe" [ref=e339] [cursor=pointer]:
+                - /url: /recipes/mocha
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]: hot
+                  - generic [ref=e345]: easy
+                - generic [ref=e346]: Simple Drip Coffee
+                - generic [ref=e347]: Easy, consistent coffee using an automatic drip maker.
+              - generic [ref=e348]:
+                - generic [ref=e349]:
+                  - generic [ref=e350]:
+                    - img [ref=e351]
+                    - generic [ref=e354]: 5 minutes
+                  - generic [ref=e355]:
+                    - img [ref=e356]
+                    - generic [ref=e361]: 4 servings
+                  - generic [ref=e362]:
+                    - img [ref=e363]
+                    - generic [ref=e368]: medium
+                - generic [ref=e369]:
+                  - paragraph [ref=e370]: "Ingredients:"
+                  - list [ref=e371]:
+                    - listitem [ref=e372]: 60 g Coffee beans
+                    - listitem [ref=e373]: 1000 ml Water
+              - link "View Recipe" [ref=e375] [cursor=pointer]:
+                - /url: /recipes/beginner-drip
+            - generic [ref=e377]:
+              - generic [ref=e378]:
+                - generic [ref=e379]:
+                  - generic [ref=e380]: cold
+                  - generic [ref=e381]: easy
+                - generic [ref=e382]: Sweet Cold Foam
+                - generic [ref=e383]: Creamy, sweet foam perfect for topping iced coffee drinks.
+              - generic [ref=e384]:
+                - generic [ref=e385]:
+                  - generic [ref=e386]:
+                    - img [ref=e387]
+                    - generic [ref=e390]: 3 minutes
+                  - generic [ref=e391]:
+                    - img [ref=e392]
+                    - generic [ref=e397]: 1 serving
+                  - generic [ref=e398]:
+                    - img [ref=e399]
+                    - generic [ref=e404]: medium
+                - generic [ref=e405]:
+                  - paragraph [ref=e406]: "Ingredients:"
+                  - list [ref=e407]:
+                    - listitem [ref=e408]: 60 ml Heavy cream or milk
+                    - listitem [ref=e409]: 1 tsp Simple syrup
+                    - listitem [ref=e410]: 2 drops Vanilla extract (optional)
+              - link "View Recipe" [ref=e412] [cursor=pointer]:
+                - /url: /recipes/cold-foam
+  - button "Open Next.js Dev Tools" [ref=e418] [cursor=pointer]:
+    - img [ref=e419]
+  - alert [ref=e423]
+```

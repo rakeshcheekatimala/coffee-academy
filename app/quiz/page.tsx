@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Hero } from '@/components/shared/Hero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Coffee } from 'lucide-react';
+import { trackQuizStart, trackQuizAnswer, trackQuizComplete } from '@/lib/utils/analytics';
 
 interface QuizQuestion {
   id: string;
@@ -90,15 +91,29 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  // Track quiz start
+  useEffect(() => {
+    if (!quizStarted) {
+      trackQuizStart();
+      setQuizStarted(true);
+    }
+  }, [quizStarted]);
 
   const handleAnswer = (value: string) => {
-    const newAnswers = { ...answers, [questions[currentQuestion].id]: value };
+    const question = questions[currentQuestion];
+    trackQuizAnswer(question.id, value, currentQuestion + 1);
+    
+    const newAnswers = { ...answers, [question.id]: value };
     setAnswers(newAnswers);
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowResult(true);
+      const result = getResult();
+      trackQuizComplete(result.profile);
     }
   };
 
@@ -111,6 +126,7 @@ export default function QuizPage() {
     setCurrentQuestion(0);
     setAnswers({});
     setShowResult(false);
+    setQuizStarted(false);
   };
 
   if (showResult) {
