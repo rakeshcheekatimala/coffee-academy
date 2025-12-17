@@ -71,6 +71,14 @@ export function trackLevelCompletion(levelId: number, levelTitle: string) {
   });
 }
 
+export function trackLevelClick(levelId: number, levelTitle: string, source: string) {
+  sendGAEvent('event', 'level_click', {
+    level_id: levelId.toString(),
+    level_title: levelTitle,
+    source: source, // e.g., 'level_card', 'homepage', 'navigation'
+  });
+}
+
 /**
  * Track quiz interactions
  */

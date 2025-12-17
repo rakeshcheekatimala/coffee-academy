@@ -18,6 +18,7 @@ import Link from 'next/link';
 import { WizardPreferences, CoffeeRecommendation, Recipe, Equipment } from '@/lib/types';
 import { RecipeCard } from '@/components/shared/RecipeCard';
 import { EquipmentCard } from '@/components/shared/EquipmentCard';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 interface WizardResultsProps {
   preferences: WizardPreferences;
@@ -171,7 +172,10 @@ export function WizardResults({
           </div>
           <div className="mt-4 text-center">
             <Button variant="ghost" asChild>
-              <Link href="/recommendations">
+              <Link 
+                href="/recommendations"
+                onClick={() => trackCTAClick('View All Coffee Recommendations', 'wizard_results', '/recommendations')}
+              >
                 View All Coffee Recommendations <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
@@ -198,7 +202,10 @@ export function WizardResults({
           </div>
           <div className="mt-4 text-center">
             <Button variant="ghost" asChild>
-              <Link href="/recipes">
+              <Link 
+                href="/recipes"
+                onClick={() => trackCTAClick('Browse All Recipes', 'wizard_results', '/recipes')}
+              >
                 Browse All Recipes <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
@@ -274,7 +281,10 @@ export function WizardResults({
           Start Over
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/levels">
+          <Link 
+            href="/levels"
+            onClick={() => trackCTAClick('Continue Learning', 'wizard_results', '/levels')}
+          >
             Continue Learning <ChevronRight className="ml-1 h-4 w-4" />
           </Link>
         </Button>

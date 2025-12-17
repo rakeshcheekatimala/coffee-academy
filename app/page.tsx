@@ -8,6 +8,7 @@ import { Leaf, Flame, Droplets, Coffee, Sparkles, BookOpen, Users, Star } from '
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 // Journey stages data
 const journeyStages = [
@@ -368,7 +369,10 @@ export default function CoffeeJourneyPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <JourneySection key={feature.title} delay={index * 0.1}>
-                <Link href={feature.href}>
+                <Link 
+                  href={feature.href}
+                  onClick={() => trackCTAClick(feature.title, 'journey_features', feature.href)}
+                >
                   <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer border-coffee-light/20 bg-white/80 backdrop-blur-sm">
                     <CardHeader>
                       <div className={`w-12 h-12 rounded-xl bg-current/10 flex items-center justify-center mb-4 ${feature.color}`}>
@@ -413,7 +417,12 @@ export default function CoffeeJourneyPage() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-500 text-white rounded-full"
             >
-              <Link href="/brew-of-the-week">See This Week&apos;s Pick</Link>
+              <Link 
+                href="/brew-of-the-week"
+                onClick={() => trackCTAClick("See This Week's Pick", 'journey_brew_of_week', '/brew-of-the-week')}
+              >
+                See This Week&apos;s Pick
+              </Link>
             </Button>
           </JourneySection>
         </div>

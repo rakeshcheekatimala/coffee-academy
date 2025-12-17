@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Coffee } from 'lucide-react';
 import Link from 'next/link';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 export function JourneyHero() {
   const { scrollY } = useScroll();
@@ -103,7 +104,12 @@ export function JourneyHero() {
             size="lg"
             className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white text-lg px-8 py-6 rounded-full shadow-lg shadow-amber-900/30 transition-all hover:shadow-xl hover:shadow-amber-800/40"
           >
-            <Link href="/wizard">Find Your Perfect Brew</Link>
+            <Link 
+              href="/wizard"
+              onClick={() => trackCTAClick('Find Your Perfect Brew', 'journey_hero', '/wizard')}
+            >
+              Find Your Perfect Brew
+            </Link>
           </Button>
           <Button
             asChild
@@ -111,7 +117,12 @@ export function JourneyHero() {
             variant="ghost"
             className="relative text-amber-50 bg-gradient-to-br from-amber-950/40 via-transparent to-amber-950/40 hover:from-amber-900/50 hover:via-amber-800/30 hover:to-amber-900/50 text-lg px-8 py-6 rounded-full backdrop-blur-md border-2 border-amber-500/30 hover:border-amber-400/50 shadow-lg shadow-amber-950/30 hover:shadow-xl hover:shadow-amber-900/40 transition-all duration-300 font-medium hover:scale-105"
           >
-            <Link href="/levels">Start Learning</Link>
+            <Link 
+              href="/levels"
+              onClick={() => trackCTAClick('Start Learning', 'journey_hero', '/levels')}
+            >
+              Start Learning
+            </Link>
           </Button>
         </motion.div>
       </div>

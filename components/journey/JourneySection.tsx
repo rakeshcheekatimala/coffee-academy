@@ -2,6 +2,8 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
+import Link from 'next/link';
+import { trackCTAClick } from '@/lib/utils/analytics';
 
 interface JourneySectionProps {
   children: ReactNode;
@@ -127,19 +129,21 @@ export function JourneyCallToAction({
       </h3>
       <p className="text-lg text-current/70 mb-8 max-w-2xl mx-auto">{description}</p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
+        <Link
           href={primaryAction.href}
+          onClick={() => trackCTAClick(primaryAction.label, 'journey_cta', primaryAction.href)}
           className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-amber-600 hover:bg-amber-500 text-white font-medium transition-colors"
         >
           {primaryAction.label}
-        </a>
+        </Link>
         {secondaryAction && (
-          <a
+          <Link
             href={secondaryAction.href}
+            onClick={() => trackCTAClick(secondaryAction.label, 'journey_cta', secondaryAction.href)}
             className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-current/20 hover:bg-current/5 font-medium transition-colors"
           >
             {secondaryAction.label}
-          </a>
+          </Link>
         )}
       </div>
     </motion.div>

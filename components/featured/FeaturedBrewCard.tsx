@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { FeaturedBrew } from '@/lib/types';
+import { trackCTAClick, trackRecipeClick } from '@/lib/utils/analytics';
 
 interface FeaturedBrewCardProps {
   featuredBrew: FeaturedBrew;
@@ -61,7 +62,10 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
               ))}
             </div>
             <Button variant="ghost" size="sm" asChild className="w-full group-hover:bg-amber-50">
-              <Link href="/brew-of-the-week">
+              <Link 
+                href="/brew-of-the-week"
+                onClick={() => trackCTAClick('View Details', 'featured_brew_compact', '/brew-of-the-week')}
+              >
                 View Details <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </Button>
@@ -229,7 +233,10 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
                 </div>
 
                 <Button asChild className="w-full bg-amber-600 hover:bg-amber-500">
-                  <Link href={`/recipes/${recipe.id}`}>
+                  <Link 
+                    href={`/recipes/${recipe.id}`}
+                    onClick={() => trackRecipeClick(recipe.id, recipe.title, 'featured_brew')}
+                  >
                     View Full Recipe <ChevronRight className="w-4 h-4 ml-1" />
                   </Link>
                 </Button>
@@ -341,7 +348,12 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
                   Find this coffee at your local specialty roaster
                 </p>
                 <Button asChild variant="secondary" className="w-full">
-                  <Link href="/recommendations">Browse All Coffees</Link>
+                  <Link 
+                    href="/recommendations"
+                    onClick={() => trackCTAClick('Browse All Coffees', 'featured_brew_sidebar', '/recommendations')}
+                  >
+                    Browse All Coffees
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

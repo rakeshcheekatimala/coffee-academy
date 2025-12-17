@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Check, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { Level } from '@/lib/types';
+import { trackLevelClick } from '@/lib/utils/analytics';
 
 interface LevelCardProps {
   level: Level;
@@ -57,7 +58,10 @@ export function LevelCard({ level, completed = false, index = 0 }: LevelCardProp
         <CardFooter>
           {level.unlocked ? (
             <Button asChild className="w-full" variant="default">
-              <Link href={`/levels/${level.id}`}>
+              <Link 
+                href={`/levels/${level.id}`}
+                onClick={() => trackLevelClick(level.id, level.title, 'level_card')}
+              >
                 {completed ? 'Review Level' : 'Start Level'}
               </Link>
             </Button>
