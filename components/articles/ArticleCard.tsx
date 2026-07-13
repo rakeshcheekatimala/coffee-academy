@@ -165,3 +165,7 @@ export function ArticleCard({ article, index = 0, variant = 'default' }: Article
   );
 }
 
+
+
+
+

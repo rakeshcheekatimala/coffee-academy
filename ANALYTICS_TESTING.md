@@ -207,13 +207,23 @@ After deploying to Vercel:
    - Go to your Vercel project settings
    - Navigate to Environment Variables
    - Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` with your GA ID
-   - Redeploy if needed
+   - **Redeploy is required** (env vars are injected at build time)
 
 2. **Verify in Real-time Reports**:
    - Go to Google Analytics → Reports → Real-time
    - Visit your deployed site
    - Interact with CTAs and links
    - Events should appear in Real-time reports within seconds
+
+3. **Verify the GA script is actually present in production HTML**:
+   - Open `view-source:` for your deployed home page
+   - Search for `googletagmanager.com/gtag/js?id=G-`
+   - If you **don’t** find it, your build did not receive `NEXT_PUBLIC_GA_MEASUREMENT_ID` (most commonly: no redeploy, wrong environment selected, or a different project)
+
+4. **Verify requests are being sent**:
+   - Open DevTools → Network tab
+   - Filter by `collect` or `google`
+   - Click any CTA/link and confirm requests to GA endpoints (e.g. `g/collect`)
 
 3. **Use GA4 DebugView**:
    - Enable DebugView in GA4

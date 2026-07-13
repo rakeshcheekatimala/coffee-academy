@@ -4,7 +4,7 @@ import { JourneyHero } from '@/components/journey/JourneyHero';
 import { JourneyStage } from '@/components/journey/JourneyStage';
 import { JourneySection, JourneyDivider, JourneyCallToAction } from '@/components/journey/JourneySection';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Leaf, Flame, Droplets, Coffee, Sparkles, BookOpen, Users, Star } from 'lucide-react';
+import { Leaf, Flame, Droplets, Coffee, Sparkles, BookOpen, Users, Star, Beaker } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -282,6 +282,13 @@ const stageIllustrations = [
 // Features section
 const features = [
   {
+    icon: Beaker,
+    title: 'Experiment',
+    description: 'Tune grind, temperature, ratio, and time in a live extraction lab',
+    href: '/lab',
+    color: 'text-teal-500',
+  },
+  {
     icon: BookOpen,
     title: 'Learn',
     description: 'Interactive lessons from bean basics to advanced brewing techniques',
@@ -366,7 +373,7 @@ export default function CoffeeJourneyPage() {
             </p>
           </JourneySection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {features.map((feature, index) => (
               <JourneySection key={feature.title} delay={index * 0.1}>
                 <Link 

@@ -9,6 +9,7 @@ import { trackNavigation } from '@/lib/utils/analytics';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/lab', label: 'Lab' },
   { href: '/articles', label: 'Learn' },
   { href: '/recipes', label: 'Recipes' },
   { href: '/community', label: 'Community' },
@@ -90,4 +91,3 @@ export function Navigation() {
     </nav>
   );
 }
-
