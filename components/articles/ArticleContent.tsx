@@ -223,7 +223,7 @@ export function ArticleContent({ article, relatedArticles = [] }: ArticleContent
         transition={{ delay: 0.1 }}
         className="mb-8"
       >
-        <div className="flex items-center gap-3 mb-4">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
           <Badge className={categoryColors[article.category]}>
             {categoryLabels[article.category]}
           </Badge>
@@ -242,7 +242,7 @@ export function ArticleContent({ article, relatedArticles = [] }: ArticleContent
 
         <p className="text-xl text-coffee-medium/70 mb-6">{article.excerpt}</p>
 
-        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
           <span className="flex items-center gap-2">
             <User className="w-4 h-4" />
             {article.author}
@@ -357,7 +357,6 @@ export function ArticleContent({ article, relatedArticles = [] }: ArticleContent
     </article>
   );
 }
-
 
 
 

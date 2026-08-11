@@ -27,8 +27,8 @@ export function GrindSizeVisual() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             <Card className="p-4 hover-glow">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-32">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <div className="w-full flex-shrink-0 sm:w-32">
                   <div
                     className="h-12 rounded"
                     style={{
@@ -38,7 +38,7 @@ export function GrindSizeVisual() {
                   />
                 </div>
                 <div className="flex-grow">
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="mb-1 flex flex-wrap items-center gap-2">
                     <h4 className="font-semibold text-lg">{grind.name}</h4>
                     <Badge variant="outline">{grind.use}</Badge>
                   </div>
@@ -54,4 +54,3 @@ export function GrindSizeVisual() {
     </div>
   );
 }
-

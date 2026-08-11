@@ -45,19 +45,21 @@ export default function LevelPage({ params }: LevelPageProps) {
       <div className="detail-shell">
         {/* Header */}
         <div className="detail-intro">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-4">
+          <div className="level-meta-row">
+            <div className="level-meta-actions">
               <Button asChild variant="ghost" size="sm">
-                <Link href="/">
+                <Link href="/levels">
                   <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Home
+                  Back to Levels
                 </Link>
               </Button>
               <Badge variant="outline" className="text-lg">
                 Level {level.id}
               </Badge>
             </div>
-            <ProgressBar current={level.id} total={totalLevels} />
+            <div className="level-progress">
+              <ProgressBar current={level.id} total={totalLevels} />
+            </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{level.title}</h1>
           <p className="text-xl text-muted-foreground">{level.description}</p>
@@ -74,8 +76,8 @@ export default function LevelPage({ params }: LevelPageProps) {
         <LevelContent sections={level.content.sections} />
 
         {/* Navigation */}
-        <div className="mt-12 flex items-center justify-between gap-4">
-          <div className="flex-1">
+        <div className="level-pagination">
+          <div className="level-pagination-slot">
             {previousLevel ? (
               <Button asChild variant="outline" className="w-full md:w-auto">
                 <Link 
@@ -92,10 +94,10 @@ export default function LevelPage({ params }: LevelPageProps) {
           </div>
 
           <Button asChild variant="outline">
-            <Link href="/levels/1">All Levels</Link>
+            <Link href="/levels">All Levels</Link>
           </Button>
 
-          <div className="flex-1 flex justify-end">
+          <div className="level-pagination-slot level-pagination-slot-end">
             {nextLevel ? (
               <Button asChild className="w-full md:w-auto">
                 <Link 

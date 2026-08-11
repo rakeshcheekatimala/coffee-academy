@@ -16,12 +16,12 @@ export function Infographic({ data, title }: InfographicProps) {
         {title && <h3 className="text-2xl font-bold mb-6 text-center">{title}</h3>}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 flex-wrap">
           {data.steps.map((step, index) => (
-            <div key={index} className="flex items-center gap-2 md:gap-4">
+            <div key={index} className="flex w-full items-center gap-2 md:w-auto md:gap-4">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-card border-2 border-coffee-medium rounded-lg p-4 md:p-6 min-w-[200px] max-w-[250px] text-center hover-glow"
+                className="bg-card border-2 border-coffee-medium w-full rounded-lg p-4 text-center hover-glow sm:min-w-[200px] sm:max-w-[250px] md:p-6"
               >
                 <div className="text-2xl font-bold text-coffee-gold mb-2">
                   {index + 1}
@@ -66,4 +66,3 @@ export function Infographic({ data, title }: InfographicProps) {
     </div>
   );
 }
-
