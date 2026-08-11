@@ -6,11 +6,10 @@ import { getLevel, getTotalLevels } from '@/lib/content/levels';
 import { LevelContent } from '@/components/level/LevelContent';
 import { ProgressBar } from '@/components/shared/ProgressBar';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { GrindSizeVisual } from '@/components/shared/GrindSizeVisual';
 import { trackLevelView, trackLevelNavigation } from '@/lib/utils/analytics';
 
@@ -43,9 +42,9 @@ export default function LevelPage({ params }: LevelPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="detail-shell">
         {/* Header */}
-        <div className="mb-8">
+        <div className="detail-intro">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4">
               <Button asChild variant="ghost" size="sm">

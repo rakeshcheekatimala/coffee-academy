@@ -9,7 +9,7 @@ import { calculateExtraction, defaultLabSettings, LabSettings } from './extracti
 
 const ExtractionScene = dynamic(() => import('./ExtractionScene'), {
   ssr: false,
-  loading: () => <div className="h-full w-full bg-[#101820]" />,
+  loading: () => <div className="lab-scene-loading h-full w-full" />,
 });
 
 const controls: Array<{
@@ -49,12 +49,12 @@ const recipes: Array<{ name: string; description: string; settings: LabSettings 
 function StatBar({ label, value, tone }: { label: string; value: number; tone: string }) {
   return (
     <div>
-      <div className="mb-1 flex items-center justify-between text-xs text-white/70">
+      <div className="lab-stat-label mb-1 flex items-center justify-between text-xs">
         <span>{label}</span>
         <span>{Math.round(value)}%</span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-white/12">
-        <div className={`h-full rounded-full ${tone}`} style={{ width: `${value}%` }} />
+      <div className="lab-stat-track h-1.5 overflow-hidden">
+        <div className={`h-full ${tone}`} style={{ width: `${value}%` }} />
       </div>
     </div>
   );
@@ -69,44 +69,43 @@ export function ExtractionLab() {
   };
 
   return (
-    <main className="min-h-screen bg-[#101820] text-white">
+    <main className="extraction-lab min-h-screen">
       <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
         <div className="absolute inset-0">
           <ExtractionScene settings={settings} metrics={metrics} />
         </div>
 
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,transparent_0,rgba(16,24,32,0.16)_38%,rgba(16,24,32,0.84)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#101820] to-transparent" />
+        <div className="lab-scene-overlay pointer-events-none absolute inset-0" />
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-2xl pt-3">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-300/30 bg-teal-300/10 px-3 py-1 text-sm text-teal-100 backdrop-blur-md">
+              <div className="lab-eyebrow mb-4 inline-flex items-center gap-2 px-3 py-1 text-sm">
                 <Beaker className="h-4 w-4" />
                 Interactive brewing model
               </div>
-              <h1 className="text-4xl font-bold tracking-normal text-white sm:text-5xl lg:text-6xl">
+              <h1 className="lab-title">
                 Coffee Extraction Lab
               </h1>
-              <p className="mt-4 max-w-xl text-base leading-7 text-white/72 sm:text-lg">
+              <p className="lab-intro mt-4 max-w-xl text-base leading-7 sm:text-lg">
                 Tune the brewing variables and watch the cup move from sharp to sweet to bitter.
                 The model is simplified, but the tradeoffs mirror real pour-over decisions.
               </p>
             </div>
 
-            <div className="w-full max-w-md rounded-lg border border-white/12 bg-[#16232b]/82 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
+            <div className="lab-metric-panel w-full max-w-md p-5">
               <div className="mb-4 flex items-start justify-between gap-3">
                 <div>
-                  <div className="flex items-center gap-2 text-sm text-white/68">
+                  <div className="lab-muted flex items-center gap-2 text-sm">
                     <Gauge className="h-4 w-4 text-teal-200" />
                     Extraction
                   </div>
-                  <div className="mt-1 text-4xl font-semibold text-white" data-testid="extraction-value">
+                  <div className="mt-1 text-4xl font-medium" data-testid="extraction-value">
                     {metrics.extraction.toFixed(1)}%
                   </div>
                 </div>
                 <div
-                  className={`rounded-full px-3 py-1 text-sm font-medium ${
+                  className={`lab-cup-state px-3 py-1 text-sm font-medium ${
                     metrics.cup === 'Balanced'
                       ? 'bg-teal-300/18 text-teal-100'
                       : metrics.cup === 'Under-extracted'
@@ -118,8 +117,8 @@ export function ExtractionLab() {
                 </div>
               </div>
 
-              <h2 className="text-xl font-semibold text-white">{metrics.headline}</h2>
-              <p className="mt-2 text-sm leading-6 text-white/68">{metrics.guidance}</p>
+              <h2 className="text-xl font-medium">{metrics.headline}</h2>
+              <p className="lab-muted mt-2 text-sm leading-6">{metrics.guidance}</p>
 
               <div className="mt-5 grid gap-3">
                 <StatBar label="Sweetness" value={metrics.sweetness} tone="bg-[#f6c453]" />
@@ -132,7 +131,7 @@ export function ExtractionLab() {
           </div>
 
           <div className="mt-auto grid gap-4 pb-3 pt-10 lg:grid-cols-[minmax(0,1fr)_360px]">
-            <div className="rounded-lg border border-white/12 bg-[#f7efe3]/95 p-4 text-[#2d1810] shadow-2xl shadow-black/25 backdrop-blur-xl">
+            <div className="lab-controls-panel p-5">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <SlidersHorizontal className="h-5 w-5 text-teal-700" />
@@ -143,7 +142,7 @@ export function ExtractionLab() {
                   variant="ghost"
                   size="sm"
                   onClick={() => setSettings(defaultLabSettings)}
-                  className="gap-2 text-[#2d1810]"
+                  className="gap-2"
                 >
                   <RotateCcw className="h-4 w-4" />
                   Reset
@@ -175,10 +174,10 @@ export function ExtractionLab() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-white/12 bg-white/10 p-4 backdrop-blur-xl">
+            <div className="lab-recipes-panel p-5">
               <div className="mb-3 flex items-center gap-2">
                 <Thermometer className="h-5 w-5 text-amber-200" />
-                <h2 className="text-lg font-semibold">Try a profile</h2>
+                <h2 className="text-lg font-semibold">Try a brew</h2>
               </div>
               <div className="grid gap-2">
                 {recipes.map((recipe) => (
@@ -186,14 +185,14 @@ export function ExtractionLab() {
                     key={recipe.name}
                     type="button"
                     onClick={() => setSettings(recipe.settings)}
-                    className="rounded-md border border-white/12 bg-white/8 p-3 text-left transition hover:bg-white/14"
+                    className="lab-recipe-button p-3 text-left transition"
                   >
-                    <span className="block text-sm font-semibold text-white">{recipe.name}</span>
-                    <span className="mt-1 block text-xs leading-5 text-white/62">{recipe.description}</span>
+                    <span className="block text-sm font-semibold">{recipe.name}</span>
+                    <span className="lab-muted mt-1 block text-xs leading-5">{recipe.description}</span>
                   </button>
                 ))}
               </div>
-              <Button asChild className="mt-4 w-full bg-teal-500 text-[#102022] hover:bg-teal-400">
+              <Button asChild className="mt-4 w-full">
                 <Link href="/recipes" className="gap-2">
                   <Coffee className="h-4 w-4" />
                   Brew a real recipe

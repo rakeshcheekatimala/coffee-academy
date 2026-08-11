@@ -5,7 +5,7 @@ import { use, useEffect } from 'react';
 import { getRecipe } from '@/lib/content/recipes';
 import { StepIndicator } from '@/components/shared/StepIndicator';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Clock, Users, Coffee, UtensilsCrossed } from 'lucide-react';
 import Link from 'next/link';
@@ -30,15 +30,9 @@ export default function RecipePage({ params }: RecipePageProps) {
     notFound();
   }
 
-  const difficultyColors = {
-    easy: 'bg-green-500',
-    medium: 'bg-yellow-500',
-    hard: 'bg-red-500',
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="detail-shell">
         {/* Header */}
         <Button asChild variant="ghost" size="sm" className="mb-6">
           <Link href="/recipes">
@@ -48,7 +42,7 @@ export default function RecipePage({ params }: RecipePageProps) {
         </Button>
 
         {/* Recipe Title */}
-        <div className="mb-8">
+        <div className="detail-intro">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{recipe.title}</h1>
           <p className="text-xl text-muted-foreground mb-6">{recipe.description}</p>
 
@@ -131,7 +125,7 @@ export default function RecipePage({ params }: RecipePageProps) {
             {/* Tools Section */}
             <Card>
               <CardHeader>
-                <CardTitle>Tools You'll Need</CardTitle>
+                <CardTitle>Tools You&apos;ll Need</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-3">

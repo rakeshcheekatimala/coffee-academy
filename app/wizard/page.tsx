@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getAllEquipment } from '@/lib/content/equipment';
 import { getAllRecommendations } from '@/lib/content/recommendations';
 import { getAllRecipes } from '@/lib/content/recipes';
-import { WizardPreferences, CoffeeRecommendation, Recipe, Equipment } from '@/lib/types';
+import { WizardPreferences } from '@/lib/types';
 import { ArrowLeft, Check } from 'lucide-react';
 import { trackWizardStart, trackWizardStep, trackWizardComplete } from '@/lib/utils/analytics';
 
@@ -146,9 +146,7 @@ export default function WizardPage() {
 
   // Track wizard start
   useEffect(() => {
-    if (currentStep === 0 && !showResults) {
-      trackWizardStart();
-    }
+    trackWizardStart();
   }, []);
 
   const currentStepData = wizardSteps[currentStep];
@@ -343,7 +341,7 @@ export default function WizardPage() {
   const savePreferences = useCallback(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('coffeeWizardPreferences', JSON.stringify(preferences));
-      alert('Preferences saved! We\'ll remember your taste profile.');
+      alert('Preferences saved! We\'ll remember your taste.');
     }
   }, [preferences]);
 
@@ -351,7 +349,7 @@ export default function WizardPage() {
     return (
       <div className="min-h-screen">
         <Hero
-          title="Your Coffee Profile"
+          title="Your Brew Direction"
           description="Personalized recommendations based on your preferences"
         />
         <div className="container mx-auto px-4 py-16 max-w-6xl">
@@ -416,16 +414,12 @@ export default function WizardPage() {
                             : handleSingleSelect(option.value)
                         }
                         variant={isSelected ? 'default' : 'outline'}
-                        className={`w-full justify-start h-auto py-4 text-left transition-all ${
-                          isSelected 
-                            ? 'bg-amber-600 hover:bg-amber-500 text-white border-amber-600' 
-                            : 'hover:bg-amber-50 hover:border-amber-300'
-                        }`}
+                        className="w-full justify-start h-auto py-4 text-left transition-all"
                       >
                         <div className="flex items-center gap-3 w-full">
                           {currentStepData.type === 'multiple' && (
-                            <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 ${
-                              isSelected ? 'bg-white border-white' : 'border-current'
+                            <div className={`w-5 h-5 border flex items-center justify-center flex-shrink-0 ${
+                              isSelected ? 'bg-primary-foreground border-primary-foreground' : 'border-current'
                             }`}>
                               {isSelected && <Check className="w-3 h-3 text-amber-600" />}
                             </div>
@@ -433,7 +427,7 @@ export default function WizardPage() {
                           <div className="flex-1">
                             <div className="font-medium">{option.label}</div>
                             {option.description && (
-                              <div className={`text-sm mt-1 ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
+                              <div className={`text-sm mt-1 ${isSelected ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>
                                 {option.description}
                               </div>
                             )}
@@ -449,7 +443,7 @@ export default function WizardPage() {
                       <Button
                         onClick={handleMultiSelectConfirm}
                         disabled={multiSelectValues.length === 0}
-                        className="flex-1 bg-amber-600 hover:bg-amber-500"
+                        className="flex-1"
                       >
                         Continue
                       </Button>

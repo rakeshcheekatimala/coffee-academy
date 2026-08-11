@@ -37,10 +37,9 @@ export function ShareButtons({
   const encodedDescription = encodeURIComponent(description);
   
   // Determine content type from URL
-  const getContentType = (): 'recipe' | 'article' | 'brew' => {
+  const getContentType = (): 'recipe' | 'article' => {
     if (shareUrl.includes('/recipes/')) return 'recipe';
     if (shareUrl.includes('/articles/')) return 'article';
-    if (shareUrl.includes('/community/brews')) return 'brew';
     return 'article'; // default
   };
   
@@ -76,7 +75,7 @@ export function ShareButtons({
           url: shareUrl,
         });
         trackShare('native', getContentType(), getContentId());
-      } catch (err) {
+      } catch {
         // User cancelled or share failed
       }
     }
@@ -270,11 +269,10 @@ export function ShareButtons({
 
 // Floating share button for mobile
 export function FloatingShareButton({ title, description }: { title: string; description?: string }) {
-  const getContentType = (): 'recipe' | 'article' | 'brew' => {
+  const getContentType = (): 'recipe' | 'article' => {
     const url = window.location.href;
     if (url.includes('/recipes/')) return 'recipe';
     if (url.includes('/articles/')) return 'article';
-    if (url.includes('/community/brews')) return 'brew';
     return 'article';
   };
   
@@ -293,7 +291,7 @@ export function FloatingShareButton({ title, description }: { title: string; des
           url: window.location.href,
         });
         trackShare('native', getContentType(), getContentId());
-      } catch (err) {
+      } catch {
         // User cancelled or share failed
       }
     }
@@ -305,10 +303,9 @@ export function FloatingShareButton({ title, description }: { title: string; des
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1 }}
       onClick={handleShare}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-amber-600 text-white shadow-lg hover:bg-amber-500 flex items-center justify-center md:hidden"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 border border-border bg-primary text-primary-foreground hover:bg-accent flex items-center justify-center md:hidden"
     >
       <Share2 className="w-6 h-6" />
     </motion.button>
   );
 }
-

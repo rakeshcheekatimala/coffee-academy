@@ -174,76 +174,6 @@ export interface WizardRecommendation {
   tips: string[];
 }
 
-// User-generated content types
-export interface UserProfile {
-  id: string;
-  username: string;
-  displayName: string;
-  avatar?: string;
-  bio?: string;
-  createdAt: string;
-  preferences?: WizardPreferences;
-}
-
-export interface UserRecipe extends Recipe {
-  userId: string;
-  userName: string;
-  userAvatar?: string;
-  photos: string[];
-  rating: number;
-  ratingCount: number;
-  createdAt: string;
-  updatedAt: string;
-  tasteNotes?: string;
-}
-
-export interface UserBrew {
-  id: string;
-  userId: string;
-  userName: string;
-  userAvatar?: string;
-  title: string;
-  description: string;
-  photos: string[];
-  beforePhoto?: string;
-  afterPhoto?: string;
-  recipeId?: string;
-  equipmentUsed: string[];
-  tasteNotes: string[];
-  rating: number;
-  createdAt: string;
-  likes: number;
-}
-
-export interface Comment {
-  id: string;
-  userId: string;
-  userName: string;
-  userAvatar?: string;
-  content: string;
-  createdAt: string;
-  updatedAt?: string;
-  parentId?: string;
-  replies?: Comment[];
-  likes: number;
-}
-
-export interface Review {
-  id: string;
-  userId: string;
-  userName: string;
-  userAvatar?: string;
-  targetType: 'recipe' | 'coffee' | 'equipment' | 'article';
-  targetId: string;
-  rating: number;
-  title: string;
-  content: string;
-  pros?: string[];
-  cons?: string[];
-  createdAt: string;
-  helpful: number;
-}
-
 export interface FeaturedBrew {
   id: string;
   weekOf: string;
@@ -271,4 +201,3 @@ export interface Article {
   relatedArticles?: string[];
   relatedGlossaryTerms?: string[];
 }
-

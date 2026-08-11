@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { 
   SlidersHorizontal, 
@@ -210,7 +210,7 @@ export function FilterPanel({
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute top-full mt-2 right-0 z-50 w-72 bg-white rounded-lg shadow-lg border p-4"
+                className="absolute top-full mt-2 right-0 z-50 w-72 bg-popover text-popover-foreground border p-4"
               >
                 {filterContent}
               </motion.div>
@@ -324,8 +324,6 @@ export function ActiveFilterChips({
     </div>
   );
 }
-
-
 
 
 

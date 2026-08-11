@@ -58,14 +58,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const relatedArticles = getRelatedArticles(article.id, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen">
+      <div className="article-shell">
         <ArticleContent article={article} relatedArticles={relatedArticles} />
       </div>
     </div>
   );
 }
-
 
 
 

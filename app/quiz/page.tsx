@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Hero } from '@/components/shared/Hero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ProgressBar } from '@/components/shared/ProgressBar';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Coffee } from 'lucide-react';
 import { trackQuizStart, trackQuizAnswer, trackQuizComplete } from '@/lib/utils/analytics';
 
@@ -91,18 +91,12 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
-  const [quizStarted, setQuizStarted] = useState(false);
-
-  // Track quiz start
-  useEffect(() => {
-    if (!quizStarted) {
-      trackQuizStart();
-      setQuizStarted(true);
-    }
-  }, [quizStarted]);
 
   const handleAnswer = (value: string) => {
     const question = questions[currentQuestion];
+    if (currentQuestion === 0 && Object.keys(answers).length === 0) {
+      trackQuizStart();
+    }
     trackQuizAnswer(question.id, value, currentQuestion + 1);
     
     const newAnswers = { ...answers, [question.id]: value };
@@ -126,7 +120,6 @@ export default function QuizPage() {
     setCurrentQuestion(0);
     setAnswers({});
     setShowResult(false);
-    setQuizStarted(false);
   };
 
   if (showResult) {
@@ -134,8 +127,8 @@ export default function QuizPage() {
     return (
       <div className="min-h-screen">
         <Hero
-          title="Your Coffee Profile"
-          description="Based on your preferences, here's your personalized coffee profile."
+          title="Your Taste Match"
+          description="A clear starting point based on the way you like to drink coffee."
         />
 
         <div className="container mx-auto px-4 py-16">
@@ -184,7 +177,7 @@ export default function QuizPage() {
   return (
     <div className="min-h-screen">
       <Hero
-        title="Find Your Coffee Flavor Profile"
+        title="Find Your Coffee Taste"
         description="Answer a few questions to discover your perfect coffee match."
       />
 
@@ -229,4 +222,3 @@ export default function QuizPage() {
     </div>
   );
 }
-

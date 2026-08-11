@@ -142,42 +142,6 @@ export function trackFilterChange(filterName: string, filterValue: string) {
 }
 
 /**
- * Track community interactions
- */
-export function trackBrewSubmission(recipeId?: string) {
-  sendGAEvent('event', 'brew_submission', {
-    recipe_id: recipeId || '',
-  });
-}
-
-export function trackRecipeSubmission(category: string, difficulty: string) {
-  sendGAEvent('event', 'recipe_submission', {
-    category: category,
-    difficulty: difficulty,
-  });
-}
-
-export function trackBrewLike(brewId: string) {
-  sendGAEvent('event', 'brew_like', {
-    brew_id: brewId,
-  });
-}
-
-export function trackComment(commentType: 'comment' | 'reply', parentId?: string) {
-  sendGAEvent('event', 'comment', {
-    comment_type: commentType,
-    parent_id: parentId || '',
-  });
-}
-
-export function trackReviewSubmission(rating: number, recipeId?: string) {
-  sendGAEvent('event', 'review_submission', {
-    rating: rating,
-    recipe_id: recipeId || '',
-  });
-}
-
-/**
  * Track article interactions
  */
 export function trackArticleView(articleSlug: string, articleTitle: string) {
@@ -225,4 +189,3 @@ export function trackTabChange(tabName: string, location: string) {
     location: location,
   });
 }
-

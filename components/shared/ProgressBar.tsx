@@ -1,6 +1,5 @@
 'use client';
 
-import { Progress } from '@/components/ui/progress';
 import { motion } from 'framer-motion';
 
 interface ProgressBarProps {
@@ -20,15 +19,21 @@ export function ProgressBar({ current, total, label }: ProgressBarProps) {
           <span className="font-medium">{current} / {total}</span>
         </div>
       )}
-      <div className="relative w-full h-3 bg-muted rounded-full overflow-hidden">
+      <div
+        className="relative w-full h-1.5 bg-muted overflow-hidden"
+        role="progressbar"
+        aria-label={label || 'Progress'}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(percentage)}
+      >
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="h-full bg-gradient-to-r from-coffee-medium to-coffee-gold rounded-full"
+          className="h-full bg-accent"
         />
       </div>
     </div>
   );
 }
-

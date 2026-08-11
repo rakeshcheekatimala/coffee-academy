@@ -61,8 +61,9 @@ export function WizardResults({
     >
       {/* Header */}
       <motion.div variants={itemVariants} className="text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 mb-6">
-          <Sparkles className="w-10 h-10 text-white" />
+        <div className="result-mark mb-6">
+          <span>01</span>
+          <Sparkles className="w-7 h-7" />
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-coffee-dark mb-4" style={{ fontFamily: 'Georgia, serif' }}>
           Your Perfect Coffee Match
@@ -77,7 +78,7 @@ export function WizardResults({
         <Card className="bg-amber-50/50 border-amber-200/50">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <span className="text-amber-600">Your Profile</span>
+              <span className="text-amber-600">Your Preferences</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -292,8 +293,6 @@ export function WizardResults({
     </motion.div>
   );
 }
-
-
 
 
 

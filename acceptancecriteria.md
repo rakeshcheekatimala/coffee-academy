@@ -12,7 +12,9 @@ This document outlines the acceptance criteria for functional testing of the Cof
 - **When** the page loads
 - **Then** header navigation should display:
   - Logo (Coffee Academy)
-  - Navigation links: Home, Learn, Recipes, Community, Featured, Find Your Brew, Profile
+  - Navigation links: Learn, Brew, Lab, Glossary
+  - Light/dark theme toggle
+  - "Start learning" action
   - All links should be visible and clickable
 
 #### AC-1.2: Header Navigation (Mobile)
@@ -44,27 +46,28 @@ This document outlines the acceptance criteria for functional testing of the Cof
 - **Given** user visits the homepage (/)
 - **When** page loads
 - **Then**:
-  - Hero section displays with title "Your Coffee Journey Starts Here"
+  - Hero section displays with title "Coffee, understood."
   - Hero description is visible
-  - CTA button "Start Your Coffee Level Journey" is visible
-  - Spotlight cards section displays 6 cards: Equipment, Brewing, Coffee Flavors, Recipes, Where to Find Good Coffee, Recommended Coffee
+  - CTA button "Start with the basics" is visible
+  - Pour-over brew reference is visible
+  - Curriculum displays Origin, Roast, Extraction, and Taste
 
 #### AC-2.2: Homepage CTA Buttons
 - **Given** user is on homepage
 - **When** user clicks:
-  - Hero CTA button
-  - Spotlight card "Explore" buttons
-  - Bottom section CTA button
+  - "Start with the basics"
+  - "Open the brew lab"
+  - Curriculum links
+  - Field note links
+  - Final "Start learning" action
 - **Then** user is redirected to correct destination page
 
-#### AC-2.3: Spotlight Cards Display
+#### AC-2.3: Theme Selection
 - **Given** user is on homepage
-- **When** page loads
-- **Then** each spotlight card displays:
-  - Icon
-  - Title
-  - Description
-  - "Explore" button
+- **When** user toggles the color theme
+- **Then**:
+  - The page switches between light and dark themes
+  - The preference persists for future visits
 
 ### 3. Levels System
 
@@ -322,132 +325,6 @@ This document outlines the acceptance criteria for functional testing of the Cof
 - **When** user clicks "Start Over"
 - **Then** wizard resets to first step
 
-### 8. Community
-
-#### AC-8.1: Community Page Load
-- **Given** user visits /community
-- **When** page loads
-- **Then**:
-  - Hero section displays
-  - Stats cards display: Shared Brews, Community Recipes, Active Members, This Week
-  - Quick action cards display: "Share Your Brew" and "Submit a Recipe"
-  - Recent Brews section displays (if available)
-  - Community Recipes section displays (if available)
-
-#### AC-8.2: Community Stats Display
-- **Given** user is on community page
-- **When** page loads
-- **Then** stats cards show:
-  - Appropriate icons
-  - Numerical values
-  - Labels
-
-#### AC-8.3: Community Quick Actions
-- **Given** user is on community page
-- **When** user clicks:
-  - "Share Your Brew" button
-  - "Submit Recipe" button
-- **Then** user is redirected to /community/submit with appropriate tab
-
-#### AC-8.4: Brew Gallery Page
-- **Given** user visits /community/brews
-- **When** page loads
-- **Then**:
-  - All user brews display in gallery
-  - Brew count displays
-  - "Share Your Brew" button is visible
-  - Each brew card displays: title, description, user info, rating, likes, equipment used, taste notes
-
-#### AC-8.5: Brew Card Interactions
-- **Given** user is on brews gallery page
-- **When** user:
-  - Clicks like button
-  - Views brew details
-- **Then**:
-  - Like count increments (if applicable)
-  - Brew details are accessible
-
-#### AC-8.6: Community Recipes Page
-- **Given** user visits /community/recipes
-- **When** page loads
-- **Then**:
-  - All user-submitted recipes display
-  - Each recipe card displays: title, description, category, difficulty, user info, rating
-
-### 9. Community Submissions
-
-#### AC-9.1: Submission Page Load
-- **Given** user visits /community/submit
-- **When** page loads
-- **Then**:
-  - Two tabs display: "Share a Brew" and "Submit Recipe"
-  - Active tab is determined by URL parameter (?type=brew or ?type=recipe)
-  - User creation form displays if user is not logged in
-
-#### AC-9.2: User Creation Form
-- **Given** user is not logged in
-- **When** user visits submission page
-- **Then**:
-  - User creation form displays
-  - Fields: username, display name, bio (optional)
-  - "Create Profile" button displays
-  - Form validates required fields
-
-#### AC-9.3: Brew Submission Form
-- **Given** user is logged in and on brew submission tab
-- **When** form displays
-- **Then** fields display:
-  - Title (required)
-  - Description (required)
-  - Recipe selection (optional)
-  - Equipment used (dynamic list)
-  - Taste notes (dynamic list)
-  - Rating slider
-
-#### AC-9.4: Brew Form Submission
-- **Given** user fills brew submission form with valid data
-- **When** user clicks "Submit Brew"
-- **Then**:
-  - Success message displays
-  - User is redirected to /community/brews after 2 seconds
-  - Submitted brew appears in gallery
-
-#### AC-9.5: Recipe Submission Form
-- **Given** user is logged in and on recipe submission tab
-- **When** form displays
-- **Then**:
-  - Multi-step form displays (4 steps)
-  - Step 1: Basic Info (title, description, category, difficulty)
-  - Step 2: Ingredients and Measurements
-  - Step 3: Instructions
-  - Step 4: Tips and Taste Notes
-
-#### AC-9.6: Recipe Form Step Navigation
-- **Given** user is on recipe submission form
-- **When** user:
-  - Fills required fields and clicks "Next"
-  - Clicks "Back" button
-- **Then**:
-  - Next step displays (if valid)
-  - Previous step displays
-  - Progress indicator updates
-
-#### AC-9.7: Recipe Form Submission
-- **Given** user completes all recipe form steps
-- **When** user clicks "Submit Recipe" on final step
-- **Then**:
-  - Success message displays
-  - User is redirected to /community/recipes after 2 seconds
-  - Submitted recipe appears in community recipes
-
-#### AC-9.8: Form Validation
-- **Given** user attempts to submit incomplete form
-- **When** required fields are empty
-- **Then**:
-  - Form does not submit
-  - Error indicators display (if applicable)
-  - "Next" button is disabled until required fields are filled
-
 ### 10. Glossary
 
 #### AC-10.1: Glossary Page Load
@@ -531,48 +408,6 @@ This document outlines the acceptance criteria for functional testing of the Cof
   - Appropriate icons
   - Titles and descriptions
   - Content cards with information
-
-### 13. Profile Page
-
-#### AC-13.1: Profile Page Load (Logged In)
-- **Given** user is logged in and visits /profile
-- **When** page loads
-- **Then**:
-  - User info card displays: avatar, display name, username, bio
-  - Stats cards display: Favorites, Recipes Viewed, Articles Read, Items Explored
-  - Tabs display: Preferences, Favorites, History
-
-#### AC-13.2: Profile Page Load (Guest)
-- **Given** user is not logged in and visits /profile
-- **When** page loads
-- **Then**:
-  - Guest profile displays
-  - "Create Profile" button displays
-  - Stats may show zero values
-
-#### AC-13.3: Profile Preferences Tab
-- **Given** user has saved preferences from wizard
-- **When** user views Preferences tab
-- **Then**:
-  - Saved preferences display: experience, intensity, roast level, brewing time, caffeine level, budget, flavor notes, bean origins
-  - "Update" button links to wizard
-  - "Reset" button clears preferences (with confirmation)
-
-#### AC-13.4: Profile Favorites Tab
-- **Given** user has favorited items
-- **When** user views Favorites tab
-- **Then**:
-  - Favorite recipes display (if any)
-  - Favorite coffees display (if any)
-  - Empty state displays if no favorites
-
-#### AC-13.5: Profile History Tab
-- **Given** user has browsing history
-- **When** user views History tab
-- **Then**:
-  - Recently viewed recipes display (if any)
-  - Recently viewed articles display (if any)
-  - Empty state displays if no history
 
 ### 14. Brew of the Week
 
@@ -814,9 +649,7 @@ This document outlines the acceptance criteria for functional testing of the Cof
 
 ### P1 - High Priority
 - Article browsing and reading
-- Community submissions
 - Search and filter functionality
-- Profile page functionality
 - Analytics event tracking
 
 ### P2 - Medium Priority

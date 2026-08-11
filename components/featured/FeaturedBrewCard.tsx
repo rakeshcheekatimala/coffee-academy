@@ -12,7 +12,6 @@ import {
   BookOpen, 
   ChevronRight,
   Star,
-  Clock,
   Thermometer,
   Scale
 } from 'lucide-react';
@@ -37,7 +36,7 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
         transition={{ duration: 0.3 }}
       >
         <Card className="h-full hover:shadow-lg transition-shadow overflow-hidden group">
-          <div className="h-2 bg-gradient-to-r from-amber-500 to-orange-500" />
+          <div className="h-px bg-border" />
           <CardHeader>
             <div className="flex items-center justify-between mb-2">
               <Badge className="bg-amber-100 text-amber-800">
@@ -81,39 +80,38 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-900 via-amber-800 to-orange-900 text-white p-8 md:p-12"
+        className="featured-brew-hero"
       >
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMS41IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48L3N2Zz4=')] opacity-50" />
-        
-        <div className="relative z-10">
+        <div className="featured-brew-index" aria-hidden="true">01 / CURATION</div>
+        <div>
           <div className="flex items-center gap-2 mb-4">
             <Badge className="bg-amber-500/20 text-amber-200 border-amber-400/30">
               <Star className="w-3 h-3 mr-1 fill-amber-300" />
               Brew of the Week
             </Badge>
-            <span className="text-amber-200/70 text-sm">
+            <span className="featured-brew-date">
               Week of {new Date(featuredBrew.weekOf).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1>
             {coffee.name}
           </h1>
 
-          <p className="text-xl text-amber-100/90 mb-6 max-w-2xl">
+          <p className="featured-brew-description">
             {coffee.description}
           </p>
 
           <div className="flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-2 rounded-lg">
+            <div className="featured-brew-fact">
               <Coffee className="w-4 h-4" />
               <span>{coffee.origin}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-2 rounded-lg">
+            <div className="featured-brew-fact">
               <Thermometer className="w-4 h-4" />
               <span className="capitalize">{coffee.roast} Roast</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-2 rounded-lg">
+            <div className="featured-brew-fact">
               <Scale className="w-4 h-4" />
               <span className="capitalize">{coffee.body} Body</span>
             </div>
@@ -341,10 +339,10 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Card className="bg-coffee-dark text-white">
+            <Card className="featured-sidebar-cta">
               <CardContent className="py-6 text-center">
                 <h4 className="font-bold mb-2">Ready to Try It?</h4>
-                <p className="text-white/80 text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4">
                   Find this coffee at your local specialty roaster
                 </p>
                 <Button asChild variant="secondary" className="w-full">
@@ -363,8 +361,5 @@ export function FeaturedBrewCard({ featuredBrew, variant = 'full' }: FeaturedBre
     </div>
   );
 }
-
-
-
 
 

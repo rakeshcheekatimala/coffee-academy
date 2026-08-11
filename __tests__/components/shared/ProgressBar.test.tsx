@@ -3,9 +3,8 @@ import { ProgressBar } from '@/components/shared/ProgressBar';
 
 describe('ProgressBar', () => {
   it('renders progress bar with correct percentage', () => {
-    const { container } = render(<ProgressBar current={2} total={6} />);
-    const progressBar = container.querySelector('.bg-gradient-to-r');
-    expect(progressBar).toBeInTheDocument();
+    render(<ProgressBar current={2} total={6} />);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '33');
   });
 
   it('displays label and current/total when provided', () => {
@@ -15,9 +14,8 @@ describe('ProgressBar', () => {
   });
 
   it('calculates percentage correctly', () => {
-    const { container } = render(<ProgressBar current={1} total={4} />);
-    const progressBar = container.querySelector('.bg-gradient-to-r');
-    expect(progressBar).toBeInTheDocument();
+    render(<ProgressBar current={1} total={4} />);
+    expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '25');
   });
 
   it('renders without label', () => {
@@ -25,4 +23,3 @@ describe('ProgressBar', () => {
     expect(container).toBeInTheDocument();
   });
 });
-

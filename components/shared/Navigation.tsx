@@ -1,93 +1,107 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Coffee, Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { trackNavigation } from '@/lib/utils/analytics';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/lab', label: 'Lab' },
   { href: '/articles', label: 'Learn' },
-  { href: '/recipes', label: 'Recipes' },
-  { href: '/community', label: 'Community' },
-  { href: '/brew-of-the-week', label: 'Featured' },
-  { href: '/wizard', label: 'Find Your Brew' },
-  { href: '/profile', label: 'Profile' },
+  { href: '/recipes', label: 'Brew' },
+  { href: '/lab', label: 'Lab' },
+  { href: '/glossary', label: 'Glossary' },
 ];
 
 export function Navigation() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const toggleTheme = () => {
+    const nextMode = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', nextMode);
+    window.localStorage.setItem('coffee-academy-theme', nextMode ? 'dark' : 'light');
+  };
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 font-bold text-xl"
-            onClick={() => trackNavigation('Logo', 'header')}
+    <header className="site-header">
+      <div className="header-inner page-shell">
+        <Link
+          href="/"
+          className="site-brand"
+          onClick={() => trackNavigation('Logo', 'header')}
+          aria-label="Coffee Academy home"
+        >
+          <span className="brand-mark" aria-hidden="true" />
+          <span>COFFEE / ACADEMY</span>
+        </Link>
+
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {navLinks.map((link) => {
+            const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={active ? 'is-active' : undefined}
+                aria-current={active ? 'page' : undefined}
+                onClick={() => trackNavigation(link.label, 'header_desktop')}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="header-actions">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle color theme"
           >
-            <Coffee className="h-6 w-6 text-coffee-gold" />
-            <span>Coffee Academy</span>
+            <Moon className="theme-icon-light" aria-hidden="true" />
+            <Sun className="theme-icon-dark" aria-hidden="true" />
+          </button>
+          <Link className="header-cta" href="/levels/1">
+            Start learning <span aria-hidden="true">↗</span>
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            {navLinks.map((link) => (
-              <Button key={link.href} asChild variant="ghost">
-                <Link 
-                  href={link.href}
-                  onClick={() => trackNavigation(link.label, 'header_desktop')}
-                >
-                  {link.label}
-                </Link>
-              </Button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          <button
+            type="button"
+            className="menu-toggle"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+            {mobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t bg-background"
-          >
-            <div className="container mx-auto px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <Button
-                  key={link.href}
-                  asChild
-                  variant="ghost"
-                  className="w-full justify-start"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    trackNavigation(link.label, 'header_mobile');
-                  }}
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </Button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+      {mobileMenuOpen ? (
+        <nav id="mobile-navigation" className="mobile-nav page-shell" aria-label="Mobile navigation">
+          <div>
+            {navLinks.map((link, index) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  trackNavigation(link.label, 'header_mobile');
+                }}
+              >
+                <span>0{index + 1}</span>
+                {link.label}
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+          <Link className="button-primary" href="/levels/1" onClick={() => setMobileMenuOpen(false)}>
+            Start learning <span>↗</span>
+          </Link>
+        </nav>
+      ) : null}
+    </header>
   );
 }

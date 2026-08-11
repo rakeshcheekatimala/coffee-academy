@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Navigation } from "@/components/shared/Navigation";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { SiteFooter } from "@/components/shared/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Coffee Academy - Learn Everything About Coffee",
-  description: "Your complete guide to coffee. Learn brewing methods, recipes, equipment, and more through our gamified learning system.",
+  title: "Coffee Academy — Brew with intent",
+  description: "A precise, practical education in coffee origin, roasting, extraction, and taste.",
 };
+
+const themeScript = `
+  (function () {
+    try {
+      var saved = localStorage.getItem('coffee-academy-theme');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    } catch (_) {}
+  })();
+`;
 
 export default function RootLayout({
   children,
@@ -27,13 +27,15 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
-    <html lang="en">
-      <head>{gaId ? <GoogleAnalytics gaId={gaId} /> : null}</head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+      </head>
+      <body>
         <Navigation />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
