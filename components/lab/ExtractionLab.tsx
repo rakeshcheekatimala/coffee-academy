@@ -69,138 +69,135 @@ export function ExtractionLab() {
   };
 
   return (
-    <main className="extraction-lab min-h-screen">
-      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-        <div className="absolute inset-0">
-          <ExtractionScene settings={settings} metrics={metrics} />
-        </div>
-
-        <div className="lab-scene-overlay pointer-events-none absolute inset-0" />
-
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-2xl pt-3">
-              <div className="lab-eyebrow mb-4 inline-flex items-center gap-2 px-3 py-1 text-sm">
-                <Beaker className="h-4 w-4" />
-                Interactive brewing model
-              </div>
-              <h1 className="lab-title">
-                Coffee Extraction Lab
-              </h1>
-              <p className="lab-intro mt-4 max-w-xl text-base leading-7 sm:text-lg">
-                Tune the brewing variables and watch the cup move from sharp to sweet to bitter.
-                The model is simplified, but the tradeoffs mirror real pour-over decisions.
-              </p>
+    <main className="extraction-lab">
+      <section className="page-shell lab-shell">
+        <header className="lab-header">
+          <div>
+            <div className="lab-eyebrow inline-flex items-center gap-2">
+              <Beaker className="h-4 w-4" />
+              Interactive brewing model
             </div>
-
-            <div className="lab-metric-panel w-full max-w-md p-5">
-              <div className="mb-4 flex items-start justify-between gap-3">
-                <div>
-                  <div className="lab-muted flex items-center gap-2 text-sm">
-                    <Gauge className="h-4 w-4 text-teal-200" />
-                    Extraction
-                  </div>
-                  <div className="mt-1 text-4xl font-medium" data-testid="extraction-value">
-                    {metrics.extraction.toFixed(1)}%
-                  </div>
-                </div>
-                <div
-                  className={`lab-cup-state px-3 py-1 text-sm font-medium ${
-                    metrics.cup === 'Balanced'
-                      ? 'bg-teal-300/18 text-teal-100'
-                      : metrics.cup === 'Under-extracted'
-                        ? 'bg-rose-300/18 text-rose-100'
-                        : 'bg-amber-300/18 text-amber-100'
-                  }`}
-                >
-                  {metrics.cup}
-                </div>
-              </div>
-
-              <h2 className="text-xl font-medium">{metrics.headline}</h2>
-              <p className="lab-muted mt-2 text-sm leading-6">{metrics.guidance}</p>
-
-              <div className="mt-5 grid gap-3">
-                <StatBar label="Sweetness" value={metrics.sweetness} tone="bg-[#f6c453]" />
-                <StatBar label="Acidity" value={metrics.acidity} tone="bg-[#ff6b6b]" />
-                <StatBar label="Body" value={metrics.body} tone="bg-[#5eead4]" />
-                <StatBar label="Clarity" value={metrics.clarity} tone="bg-[#8bdff0]" />
-                <StatBar label="Bitterness" value={metrics.bitterness} tone="bg-[#c084fc]" />
-              </div>
-            </div>
+            <h1 className="lab-title">Coffee Extraction Lab</h1>
           </div>
+          <p className="lab-intro">
+            Tune the brewing variables and watch the cup move from sharp to sweet to bitter.
+            The model is simplified, but the tradeoffs mirror real pour-over decisions.
+          </p>
+        </header>
 
-          <div className="mt-auto grid gap-4 pb-3 pt-10 lg:grid-cols-[minmax(0,1fr)_360px]">
-            <div className="lab-controls-panel p-5">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-2">
-                  <SlidersHorizontal className="h-5 w-5 text-teal-700" />
-                  <h2 className="text-lg font-semibold">Brew variables</h2>
-                </div>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setSettings(defaultLabSettings)}
-                  className="gap-2"
-                >
-                  <RotateCcw className="h-4 w-4" />
-                  Reset
-                </Button>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {controls.map((control) => (
-                  <label key={control.key} className="block">
-                    <span className="mb-2 flex items-center justify-between gap-3 text-sm font-medium">
-                      <span>{control.label}</span>
-                      <span className="rounded bg-[#2d1810]/8 px-2 py-1 font-mono text-xs">
-                        {settings[control.key]}
-                        {control.suffix}
-                      </span>
-                    </span>
-                    <input
-                      type="range"
-                      min={control.min}
-                      max={control.max}
-                      step={control.step}
-                      value={settings[control.key]}
-                      onChange={(event) => updateSetting(control.key, Number(event.target.value))}
-                      data-testid={`control-${control.key}`}
-                      className="h-2 w-full cursor-pointer accent-teal-700"
-                    />
-                  </label>
-                ))}
-              </div>
+        <div className="lab-workbench">
+          <section className="lab-scene-frame" aria-label="Live extraction visualization">
+            <div className="lab-scene-viewport">
+              <ExtractionScene settings={settings} metrics={metrics} />
             </div>
+            <div className="lab-scene-caption">
+              <span>Live extraction model</span>
+              <span className="lab-live-status">
+                <span aria-hidden="true" />
+                Responds in real time
+              </span>
+            </div>
+          </section>
 
-            <div className="lab-recipes-panel p-5">
-              <div className="mb-3 flex items-center gap-2">
-                <Thermometer className="h-5 w-5 text-amber-200" />
-                <h2 className="text-lg font-semibold">Try a brew</h2>
+          <section className="lab-controls-panel" aria-labelledby="lab-controls-title">
+            <div className="lab-controls-heading">
+              <div className="flex items-center gap-2">
+                <SlidersHorizontal className="h-5 w-5" />
+                <h2 id="lab-controls-title" className="text-lg font-semibold">Brew variables</h2>
               </div>
-              <div className="grid gap-2">
-                {recipes.map((recipe) => (
-                  <button
-                    key={recipe.name}
-                    type="button"
-                    onClick={() => setSettings(recipe.settings)}
-                    className="lab-recipe-button p-3 text-left transition"
-                  >
-                    <span className="block text-sm font-semibold">{recipe.name}</span>
-                    <span className="lab-muted mt-1 block text-xs leading-5">{recipe.description}</span>
-                  </button>
-                ))}
-              </div>
-              <Button asChild className="mt-4 w-full">
-                <Link href="/recipes" className="gap-2">
-                  <Coffee className="h-4 w-4" />
-                  Brew a real recipe
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={() => setSettings(defaultLabSettings)}
+                className="gap-2"
+              >
+                <RotateCcw className="h-4 w-4" />
+                Reset
               </Button>
             </div>
-          </div>
+
+            <div className="lab-control-summary" aria-live="polite">
+              <div>
+                <div className="lab-muted flex items-center gap-2 text-xs uppercase tracking-[0.12em]">
+                  <Gauge className="h-4 w-4" />
+                  Extraction
+                </div>
+                <div className="mt-1 text-4xl font-medium" data-testid="extraction-value">
+                  {metrics.extraction.toFixed(1)}%
+                </div>
+              </div>
+              <div className="lab-cup-state">{metrics.cup}</div>
+            </div>
+
+            <div className="lab-control-list">
+              {controls.map((control) => (
+                <label key={control.key} className="lab-control-row">
+                  <span className="mb-2 flex items-center justify-between gap-3 text-sm font-medium">
+                    <span>{control.label}</span>
+                    <span className="lab-control-value">
+                      {settings[control.key]}
+                      {control.suffix}
+                    </span>
+                  </span>
+                  <input
+                    type="range"
+                    min={control.min}
+                    max={control.max}
+                    step={control.step}
+                    value={settings[control.key]}
+                    onChange={(event) => updateSetting(control.key, Number(event.target.value))}
+                    data-testid={`control-${control.key}`}
+                    className="h-2 w-full cursor-pointer"
+                  />
+                </label>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <div className="lab-analysis-grid">
+          <section className="lab-metric-panel">
+            <div className="lab-metric-copy">
+              <p className="lab-section-kicker">Cup profile</p>
+              <h2>{metrics.headline}</h2>
+              <p className="lab-muted">{metrics.guidance}</p>
+            </div>
+            <div className="lab-profile-grid">
+              <StatBar label="Sweetness" value={metrics.sweetness} tone="bg-[#f6c453]" />
+              <StatBar label="Acidity" value={metrics.acidity} tone="bg-[#ff6b6b]" />
+              <StatBar label="Body" value={metrics.body} tone="bg-[#5eead4]" />
+              <StatBar label="Clarity" value={metrics.clarity} tone="bg-[#8bdff0]" />
+              <StatBar label="Bitterness" value={metrics.bitterness} tone="bg-[#c084fc]" />
+            </div>
+          </section>
+
+          <section className="lab-recipes-panel">
+            <div className="mb-4 flex items-center gap-2">
+              <Thermometer className="h-5 w-5" />
+              <h2 className="text-lg font-semibold">Try a brew</h2>
+            </div>
+            <div className="grid gap-2">
+              {recipes.map((recipe) => (
+                <button
+                  key={recipe.name}
+                  type="button"
+                  onClick={() => setSettings(recipe.settings)}
+                  className="lab-recipe-button"
+                >
+                  <span className="block text-sm font-semibold">{recipe.name}</span>
+                  <span className="lab-muted mt-1 block text-xs leading-5">{recipe.description}</span>
+                </button>
+              ))}
+            </div>
+            <Button asChild className="mt-4 w-full">
+              <Link href="/recipes" className="gap-2">
+                <Coffee className="h-4 w-4" />
+                Brew a real recipe
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </section>
         </div>
       </section>
     </main>

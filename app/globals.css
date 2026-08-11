@@ -1331,39 +1331,122 @@
   color: var(--brand-accent);
 }
 
-/* Extraction Lab: immersive, but still part of the same theme */
+/* Extraction Lab */
 .extraction-lab,
 .lab-scene-loading {
   color: var(--foreground);
   background: var(--background);
 }
 
-.lab-scene-overlay {
-  background: radial-gradient(circle at 50% 26%, transparent 0, color-mix(in srgb, var(--background) 20%, transparent) 38%, color-mix(in srgb, var(--background) 88%, transparent) 100%);
+.lab-shell {
+  padding-block: clamp(64px, 8vw, 112px);
 }
 
-.lab-eyebrow,
+.lab-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .55fr);
+  align-items: end;
+  gap: clamp(40px, 8vw, 120px);
+  padding-bottom: clamp(36px, 5vw, 64px);
+  border-bottom: 1px solid var(--line);
+}
+
+.lab-eyebrow {
+  margin-bottom: 22px;
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.lab-eyebrow svg,
+.lab-controls-heading svg,
+.lab-recipes-panel > div:first-child svg {
+  color: var(--brand-accent);
+  stroke-width: 1.6;
+}
+
 .lab-cup-state {
+  padding: 7px 10px;
   border: 1px solid var(--line);
   border-radius: 0 !important;
-  color: var(--foreground) !important;
-  background: color-mix(in srgb, var(--surface) 84%, transparent) !important;
-  backdrop-filter: blur(14px);
+  color: var(--foreground);
+  background: var(--background);
+  font-size: 12px;
+  font-weight: 620;
 }
 
 .lab-title {
-  max-width: 720px;
+  max-width: 800px;
   color: var(--foreground);
-  font-size: clamp(52px, 6.5vw, 90px);
+  font-size: clamp(56px, 6.8vw, 92px);
   font-weight: 520;
   letter-spacing: -.07em;
   line-height: .92;
 }
 
-.lab-intro,
+.lab-intro {
+  max-width: 460px;
+  color: var(--ink-soft);
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.65;
+}
+
 .lab-muted,
 .lab-stat-label {
   color: var(--ink-soft);
+}
+
+.lab-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(380px, .8fr);
+  gap: 24px;
+  margin-top: 24px;
+  align-items: stretch;
+}
+
+.lab-scene-frame {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.lab-scene-viewport {
+  height: 512px;
+  overflow: hidden;
+  background: #101820;
+}
+
+.lab-scene-caption {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 18px;
+  border-top: 1px solid var(--line);
+  color: var(--foreground);
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 620;
+  letter-spacing: .04em;
+}
+
+.lab-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-weight: 520;
+}
+
+.lab-live-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-accent) 14%, transparent);
 }
 
 .lab-metric-panel,
@@ -1372,9 +1455,102 @@
   border: 1px solid var(--line);
   border-radius: 0 !important;
   color: var(--foreground);
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  background: var(--surface);
   box-shadow: none;
-  backdrop-filter: blur(18px);
+}
+
+.lab-controls-panel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(22px, 2.5vw, 34px);
+}
+
+.lab-controls-heading,
+.lab-control-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lab-controls-heading {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lab-control-summary {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lab-control-list {
+  display: grid;
+  gap: 18px;
+  padding-top: 24px;
+}
+
+.lab-control-row {
+  display: block;
+}
+
+.lab-control-value {
+  min-width: 52px;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  text-align: center;
+}
+
+.lab-analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.lab-metric-panel,
+.lab-recipes-panel {
+  padding: clamp(22px, 2.5vw, 34px);
+}
+
+.lab-metric-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, .55fr) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.lab-section-kicker {
+  margin-bottom: 10px;
+  color: var(--brand-accent);
+  font-size: 10px;
+  font-weight: 720;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.lab-metric-copy h2 {
+  max-width: 420px;
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 520;
+  letter-spacing: -.04em;
+  line-height: 1.05;
+}
+
+.lab-metric-copy .lab-muted {
+  max-width: 440px;
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.lab-profile-grid {
+  display: grid;
+  align-content: center;
+  gap: 15px;
 }
 
 .lab-stat-track {
@@ -1387,19 +1563,88 @@
 
 .lab-recipe-button {
   width: 100%;
+  padding: 13px;
   border: 1px solid var(--line);
   border-radius: 0 !important;
   color: var(--foreground);
   background: transparent;
+  text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
 .lab-recipe-button:hover {
   border-color: var(--foreground);
   background: var(--surface-strong);
+  transform: translateX(2px);
 }
 
 .extraction-lab input[type="range"] {
   accent-color: var(--brand-accent);
+}
+
+@media (max-width: 1024px) {
+  .lab-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 28px;
+  }
+
+  .lab-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-scene-viewport {
+    height: min(58vw, 480px);
+  }
+
+  .lab-control-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+  }
+
+  .lab-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .lab-shell {
+    padding-block: 48px 72px;
+  }
+
+  .lab-title {
+    font-size: clamp(44px, 14vw, 62px);
+  }
+
+  .lab-intro {
+    font-size: 16px;
+  }
+
+  .lab-scene-viewport {
+    height: clamp(240px, 68vw, 320px);
+  }
+
+  .lab-scene-caption {
+    min-height: 52px;
+    padding-inline: 14px;
+  }
+
+  .lab-live-status {
+    font-size: 0;
+  }
+
+  .lab-control-list,
+  .lab-metric-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-control-list {
+    gap: 20px;
+  }
+
+  .lab-metric-panel {
+    gap: 32px;
+  }
 }
 
 @media (max-width: 640px) {
