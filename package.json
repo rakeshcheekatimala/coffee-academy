@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && opennextjs-cloudflare build --skipNextBuild && node scripts/stage-sites-build.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
@@ -29,13 +29,14 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.25",
     "lucide-react": "^0.556.0",
-    "next": "16.0.7",
+    "next": "16.0.11",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tailwind-merge": "^3.4.0",
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.18.0",
     "@playwright/test": "^1.57.0",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
@@ -47,12 +48,13 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.185.1",
     "eslint": "^9",
-    "eslint-config-next": "16.0.7",
+    "eslint-config-next": "16.0.11",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "playwright": "^1.57.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.4.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.65.0"
   }
 }
